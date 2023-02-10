@@ -26,7 +26,7 @@ The target audience are persons who are interested in working out and eating hea
 <summary> Read More </summary>
 
 - Feature : User Account
-- User Story: As a teenage I was to be able to add items to my cart and comeback in a few weeks when I have acquired to money.
+    - User Story: As a teenage I was to be able to add items to my cart and comeback in a few weeks when I have acquired to money.
 
 - Feature : Password authentication
     - User Story: As someone previously hack I want to ensure that my information is safely secured.
