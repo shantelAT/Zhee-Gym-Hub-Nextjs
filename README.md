@@ -18,6 +18,8 @@ To measure the website's success, we will allow users to share their feedback on
 ### Who is the Target Audience? 
 The target audience are persons who are interested in working out and eating health, or persons who just want to maintain and healthy life style.This include all genders, ranginging from age 12 upwards.
 
+</details>
+
 
 ## --- Feature Dump  
 <details>
