@@ -1,5 +1,5 @@
 ## Zhee-Gym-Hub-Nextjs
-![Design](public/wireframe.png)
+![Design](public/gymhub-wireframe.svg)
 
 ## ---- ONE PAGER  
 <details>
@@ -17,7 +17,7 @@ To measure the website's success, we will allow users to share their feedback on
 
 ### Who is the Target Audience? 
 The target audience are persons who are interested in working out and eating health, or persons who just want to maintain and healthy life style.This include all genders, ranginging from age 12 upwards.
-</details>
+
 
 ## --- Feature Dump  
 <details>
@@ -27,25 +27,25 @@ The target audience are persons who are interested in working out and eating hea
 - User Story: As a teenage I was to be able to add items to my cart and comeback in a few weeks when I have acquired to money.
 
 - Feature : Password authentication
-- User Story: As someone previously hack I want to ensure that my information is safely secured.
+    - User Story: As someone previously hack I want to ensure that my information is safely secured.
 
 - Feature : Payment Options integrated
-- User Story: As a mom, I avoid having my cards with me so I dont lose them, i would like to have the option pay for products in my account and to be able to store payment.
+    - User Story: As a mom, I avoid having my cards with me so I dont lose them, i would like to have the option pay for products in my account and to be able to store payment.
 
 - Feature : Blog (file sharing)
-- User Story: As someone who is new to working out I want to be able to learn from other persons. 
+    - User Story: As someone who is new to working out I want to be able to learn from other persons. 
 
 - Feature : Video player
-- User Story: I would like to have watch pre-categored workout videos specific to my goals recorded by proffessionals. I would like to have a Ads freevidoe watching experience.
+    - User Story: I would like to have watch pre-categored workout videos specific to my goals recorded by proffessionals. I would like to have a Ads freevidoe watching experience.
 
 - Feature : Video Recommendation
-- User Story: As someone who is new to working out i would like to see recommended videos based on my target goals given to me after i have complete one.
+    - User Story: As someone who is new to working out i would like to see recommended videos based on my target goals given to me after i have complete one.
 
 - Feature : Video Download
-- User Story: I would like to be able to watch videos from my device in cases where I am not able to access the website. 
+    - User Story: I would like to be able to watch videos from my device in cases where I am not able to access the website. 
 
 - Feature : Mobile Phone Implementation
-- User Story: I would like to also get access to my account via my phne for times when I am on the go.
+    - User Story: I would like to also get access to my account via my phne for times when I am on the go.
 
 - Feature : clothing Recommendations
 - Feature : Clothing Review Option
@@ -54,6 +54,8 @@ The target audience are persons who are interested in working out and eating hea
 - Feature : Chat Bot (Chat GPT)
 - Feature : Search bar 
 - Feature : Filter Products
+
+</details>
 
 #### Deploy on Vercel
 
