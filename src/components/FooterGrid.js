@@ -1,8 +1,12 @@
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import TextCard from "./TextCard";
+import ImageCard from "./ImageCard";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-function NavBar() {
+function FooterGrid() {
   return (
     <>
   
@@ -35,9 +39,14 @@ function NavBar() {
           </Nav.Link>
         </Nav.Item>
       </Nav>
+      
+      <Container>
+        <TextCard></TextCard>
+      </Container>
       </Navbar>
     </>
   );
 }
 
-export default NavBar;
+
+export default FooterGrid;

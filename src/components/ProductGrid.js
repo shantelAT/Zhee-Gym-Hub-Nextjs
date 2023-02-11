@@ -7,11 +7,10 @@ import ProductCard from './Productcard';
 export default function GridAutoLayout({products}) {
   return (
     <Container>
-      <Row>
+      <Row  >
       {products?.map((product) => (
       <Col key={product.id} md={4}>
         <ProductCard product={product.name} />
-        console.log({product.name})
       </Col>
     ))}
       </Row>

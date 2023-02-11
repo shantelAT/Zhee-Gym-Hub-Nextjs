@@ -1,40 +1,28 @@
-
-export default (req, res) => {
-    res.status(200).json({
-        "products": [
-            {
-              "name": "shirt",
-              "text": "something"
-            },
-            {
-              "name": "Pants",
-              "text": "something"
-             
-            },
-            {
-              "name": "Soaks",
-              "text": "something"
-            },
-            {
-              "name": "Tights",
-              "text": "something"
-            },
-            {
-              "name": "croptop",
-              "text": "something"
-            },
-            {
-              "name": "dumpbell",
-              "text": "something"
-            },
-            {
-              "name": "ball",
-              "text": "something"
-            },
-            {
-              "name": "rnadom thing",
-              "text": "something"
-            }
-          ]
-    });
-};
+export default function handler(req, res) {
+  res.status(200).json([
+    {
+      name: "Product 1",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      name: "Product 2",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      name: "Product 2",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      name: "Product 1",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      name: "Product 2",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      name: "Product 2",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+  ])
+}
