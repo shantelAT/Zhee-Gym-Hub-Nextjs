@@ -1,0 +1,122 @@
+/* styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khojki&family=Russo+One&display=swap');
+
+
+body {
+    font-family:'Noto Serif Khojki', serif;
+    margin: auto;
+    background-color: var(--secondary-color);
+}
+
+:root {
+    --primary-color: #161b22;
+    --secondary-color: #ffbd59;
+    --accent-color: #4c7031;
+    --accent-color2: #dbb299;
+    --accent-color-light: #fff;
+  }
+
+
+  .navbar{
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: black;
+  }
+
+  .navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.nav-link{
+    color:var(--primary-color);
+     white-space: nowrap;
+     display: block;
+     font-family: 'Noto Serif Khojki', serif;
+     font-size:20px;
+     transition: color 0.3s ease; 
+     margin-left: 25px;
+}
+
+.nav-btn{
+    background: var(--accent-color-light);
+    color: var(--primary-color);
+    font-family: 'Noto Serif Khojki', serif;
+    font-size:20px;
+    padding: "12px 36px";
+    margin: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid var(--accent-color-light);
+    transition: all 0.3s ease;
+}
+.carousel{
+    background-color:var(--primary-color) ;
+}
+
+/* Carousel */
+.carousel-caption{
+    bottom: auto;
+    top:50%; 
+    width: 45%;
+    transform: translateY(-50%); 
+    padding: 10px; 
+    color: var(--accent-color-light); 
+    text-align: left ;
+}
+.carousel-h2{
+    font-size: 60px; 
+    font-weight:600; 
+    word-wrap: break-word;
+    margin-left:-3px;
+    font-family: 'Russo One', sans-serif;
+}
+
+.carousel-h2-span{
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.carousel-p{
+    font-size: 27px;
+}
+
+.typing{
+    color: var(--secondary-color);
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+
+}
+.carousel-btn {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: black;
+    font-size: 20px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover{
+    color: var(--secondary-color);
+    background: none;
+}
+
+
+
+.nav-button{
+    background: var(--accent-color-light);
+    color: black;
+    font-size: 20px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid var(--accent-color-light);
+    transition: all 0.3s ease;
+}
