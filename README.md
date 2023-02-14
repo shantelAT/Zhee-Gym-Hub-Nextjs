@@ -21,7 +21,8 @@ The target audience are persons who are interested in working out and eating hea
 </details>
 
 
-## --- Feature Dump  
+## Feature Dump  
+
 <details>
 <summary> Read More </summary>
 
@@ -38,7 +39,7 @@ The target audience are persons who are interested in working out and eating hea
     - User Story: As someone who is new to working out I want to be able to learn from other persons. 
 
 - Feature : Video player
-    - User Story: I would like to have watch pre-categored workout videos specific to my goals recorded by proffessionals. I would like to have a Ads freevidoe watching experience.
+    - User Story: As a busy studentI would like to have watch pre-categored workout videos specific to my goals recorded by proffessionals. I would like to have a Ads freevidoe watching experience.
 
 - Feature : Video Recommendation
     - User Story: As someone who is new to working out i would like to see recommended videos based on my target goals given to me after i have complete one.
@@ -50,11 +51,21 @@ The target audience are persons who are interested in working out and eating hea
     - User Story: I would like to also get access to my account via my phne for times when I am on the go.
 
 - Feature : clothing Recommendations
+    - User Story:
+
 - Feature : Clothing Review Option
+    - User Story:
+    
+- Feature : Clothing Review Option
+    - User Story:
+
 - Feature : Diet Recommendation
 
 - Feature : Chat Bot (Chat GPT)
+    - User Story:
+
 - Feature : Search bar 
+
 - Feature : Filter Products
 
 </details>

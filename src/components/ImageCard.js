@@ -3,9 +3,11 @@ import Card from 'react-bootstrap/Card';
 
 function ImageCard() {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="../smallcard.png" />
-    </Card>
+    <Card.Body className= "imagecard">
+    <div  >
+      <Card.Img className= "imagecard-image" src="../aboutus.svg" />
+    </div>
+    </Card.Body>
   );
 }
 

@@ -6,15 +6,15 @@ import ProductCard from './Productcard';
 
 export default function GridAutoLayout({products}) {
   return (
-    <Container>
+    <div className='productgrid'>
       <Row  >
       {products?.map((product) => (
-      <Col key={product.id} md={4}>
+      <Col key={product.id} >
         <ProductCard product={product.name} />
       </Col>
     ))}
       </Row>
-    </Container>
+    </div>
   );
 }
 
