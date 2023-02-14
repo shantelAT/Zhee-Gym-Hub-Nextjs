@@ -51,11 +51,13 @@ function NavBar() {
         </Nav.Item>
 
         <Nav.Item>
-          <Nav.Link   className='nav-link'>Diet</Nav.Link>
+          <Nav.Link   className='nav-link'>Dieting</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link className='nav-btn'>Sign in</Nav.Link>
-
+        </Nav.Item>
+        <Nav.Item>
+        <span class="material-symbols-outlined"> shopping_cart_checkout</span>
         </Nav.Item>
       </Nav>
       </Navbar>

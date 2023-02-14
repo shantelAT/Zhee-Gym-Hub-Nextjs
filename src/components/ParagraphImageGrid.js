@@ -6,16 +6,16 @@ import ImageCard from "./ImageCard";
 
 function ParagraphGridImageGrid() {
   return (
-    <Container>
-      <Row>
+    <div className='aboutus'>
+      <Row className='aboutus-row'>
         <Col>
-        <TextCard></TextCard>
+        <TextCard ></TextCard>
         </Col>
         <Col>
         <ImageCard></ImageCard>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 
