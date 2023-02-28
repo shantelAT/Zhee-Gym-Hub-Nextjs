@@ -2,10 +2,11 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import React, { useEffect } from 'react';
+import Card from 'react-bootstrap/Card';
 
 
 
-function NavBar() {
+function NavBar({showElement}) {
 
 /* 
   useEffect(() => {
@@ -23,7 +24,7 @@ function NavBar() {
   return (
     <>
   
-      <Navbar   class="navbar">
+      <Navbar  sticky="top" class="navbar">
         <Container>
           <Navbar.Brand href="#home">
             <img
@@ -39,11 +40,11 @@ function NavBar() {
         < Nav  activeKey="/home" class="max-width" >
 
         < Nav.Item>
-          <Nav.Link href="/home" className='nav-link'>Home</Nav.Link>
+          <Nav.Link href="/" className='nav-link'>Home</Nav.Link>
         </Nav.Item>
 
         <Nav.Item>
-          <Nav.Link eventKey="link-1" className='nav-link'>Zheé-Hub </Nav.Link>
+          <Nav.Link eventKey="link-1" href='/hubpage' className='nav-link'>Zheé-Hub </Nav.Link>
         </Nav.Item>
 
         <Nav.Item>
@@ -54,7 +55,8 @@ function NavBar() {
           <Nav.Link   className='nav-link'>Dieting</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className='nav-btn'>Sign in</Nav.Link>
+        {showElement ? <Nav.Link href='/signinpage' className='nav-btn'>Sign in</Nav.Link> : <Card.Img class="card-avatar" src='../aboutus.svg'/>}
+          
         </Nav.Item>
         <Nav.Item>
         <span class="material-symbols-outlined"> shopping_cart_checkout</span>

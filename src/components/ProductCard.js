@@ -9,8 +9,7 @@ function ProductCard(props) {
       <Card.Body className='productcard-body'>
         <Card.Title >{ProdName}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card.
+          Some quick example text to do what text do.
         </Card.Text>
         <Button className='productcard-btn'>Go somewhere</Button>
       </Card.Body>

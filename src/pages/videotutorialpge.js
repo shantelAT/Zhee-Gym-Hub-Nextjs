@@ -1,18 +1,14 @@
 import React from "react";
 import Head from "next/head";
-import ProductGrid from "../components/ProductGrid";
 import NavBar from "../components/NavBar";
-import Carousel from "../components/Carousel";
-import ParagraphGridImageGrid from "../components/ParagraphImageGrid";
-import ContactForm from "@/components/SignInForm";
-import ContactUsForm from "@/components/ContactUsForm";
 import FooterGrid from "@/components/FooterGrid";
-import Meta from "@/components/Meta";
+import VerticalGrid from "@/components/hub/VerticalGrid";
 
 
-function getProducts() {
 
-  return fetch("/api/products", {
+function getVideos() {
+
+  return fetch("/api/videos", {
     method: "GET"
   })
     .then((response) => response.json())
@@ -20,18 +16,17 @@ function getProducts() {
     .catch((error) => console.error(error));
 }
 
-export default function Home() {
+export default function ZheeHub() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [error, setError] = React.useState(false);
-  const [products, setProducts] = React.useState([]);
+  const [videos, setVideos] = React.useState([]);
 
   React.useEffect(() => {
     setIsLoading(true);
-    getProducts()
+    getVideos()
       .then((response) => {
-        setProducts(response);
+        setVideos(response);
         setIsLoading(false);
-        console.log(getProducts)
       })
       .catch((error) => {
         console.error(error);
@@ -53,11 +48,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <NavBar showElement></NavBar>
-        <Carousel></Carousel>
-        <ParagraphGridImageGrid></ParagraphGridImageGrid>
-        <ProductGrid products={products} />
-        <ContactUsForm></ContactUsForm>
+        <NavBar></NavBar>
+        <VerticalGrid videos={videos}></VerticalGrid>
         <FooterGrid></FooterGrid>
        
       </main>
