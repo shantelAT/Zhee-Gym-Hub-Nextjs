@@ -1,11 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function ImageCard() {
+function ImageCard({cardBody, cardImage}) {
   return (
-    <Card.Body className= "imagecard">
+    <Card.Body className= {cardBody}>
     <div  >
-      <Card.Img className= "imagecard-image" src="../aboutus.svg" />
+      <Card.Img className= {cardImage} src="../aboutus.svg" />
     </div>
     </Card.Body>
   );

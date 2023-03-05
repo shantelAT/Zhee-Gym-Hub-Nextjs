@@ -408,3 +408,14 @@ margin-bottom: 20px;
   .verticalvideogrid{
     width: 30%;
   }
+
+
+  .videoForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 20px ;
+    align-items: first baseline;
+  }

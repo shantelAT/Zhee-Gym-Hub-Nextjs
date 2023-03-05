@@ -3,18 +3,24 @@ import Head from "next/head";
 import NavBar from "../components/NavBar";
 import FooterGrid from "@/components/FooterGrid";
 import VerticalGrid from "@/components/hub/VerticalGrid";
+import {ref, onValue } from "firebase/storage"
+import db from "src/pages/handlingfirebas";
+import {useState, useEffect, listAll} from "react"
 
+ 
 
 
 function getVideos() {
-
+  const [tutotialList, setTutorialList] = useState([]);
+  const tutotialListRef = ref(storage, "tutorials")
+  /*
   return fetch("/api/videos", {
     method: "GET"
   })
     .then((response) => response.json())
     .then((data) => data)
     .catch((error) => console.error(error));
-}
+  }
 
 export default function ZheeHub() {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -33,10 +39,17 @@ export default function ZheeHub() {
         setError(true);
       });
   }, []);
-
+*/
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error...</div>;
 
+
+  useEffect(()=> {
+listAll(tutotialListRef).then((response) => {
+  console.log(response)
+})
+  }, [])
+  
   return (
     <>
       <Head>

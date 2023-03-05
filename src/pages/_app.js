@@ -12,6 +12,8 @@ import { QueryClientProvider } from "./util/db";
 
 export default function App({ Component, pageProps }) {
   return (
+    <Component {...pageProps} />
+    /*
     <QueryClientProvider>
       <AuthProvider>
         <>
@@ -25,6 +27,6 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </>
       </AuthProvider>
-    </QueryClientProvider>
+    </QueryClientProvider>*/
   );
 }

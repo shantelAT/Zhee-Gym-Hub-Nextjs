@@ -5,25 +5,23 @@ import FooterGrid from "@/components/FooterGrid";
 import TextCard from "@/components/TextCard";
 import VideoGrid from "@/components/hub/VideoGrid";
 import HubNav from "@/components/hub/HubNav";
+import {ref, getDownloadURL, listAll } from "firebase/storage"
+import {useState, useEffect} from "react"
+import { firebaseApp, firestore } from "./util/firebase";
+import {getStorage } from "firebase/storage"
+import { collection, getDocs, getFirestore  } from "firebase/firestore";
 
-
-
-function getVideos() {
-
-  return fetch("/api/videos", {
-    method: "GET"
-  })
-    .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.error(error));
-}
 
 export default function ZheeHub() {
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [error, setError] = React.useState(false);
-  const [videos, setVideos] = React.useState([]);
-
-  React.useEffect(() => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [videos, setVideos] = useState([]); //important
+  //const [thumbnailsList, setThumbnailList] = useState([]);
+  const storage = getStorage(firebaseApp );
+  const tutotialListRef = ref(storage, "tutorial-videos")
+  const db = getFirestore(firebaseApp);
+  
+ /* React.useEffect(() => {
     setIsLoading(true);
     getVideos()
       .then((response) => {
@@ -35,10 +33,27 @@ export default function ZheeHub() {
         setError(true);
       });
   }, []);
+*/
+if (isLoading) return <div>Loading...</div>;
+if (error) return <div>Error...</div>;
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error...</div>;
+//get list of thumbanil from firebase storage
+    useEffect(()=> {
+      ; (async () =>{
+          const collectionRef = collection(db, "tutorials")
+          const  snapshots = await getDocs(collectionRef)
+          const docs = snapshots.docs.map(doc => {
+            const data = doc.data()
+            data.id = doc.id
+            return data
+          })
+          
+          setVideos(docs)
+      })()
+    }, [])
 
+    
+    console.log("videos", videos)
   return (
     <>
       <Head>
@@ -53,7 +68,7 @@ export default function ZheeHub() {
         <NavBar></NavBar>
         <TextCard cardclassName= "textcard-hub" titleclassName="textcard-title" textclassName= "textcard-text"  ></TextCard>
         <HubNav ></HubNav>
-        <VideoGrid videos={videos} ></VideoGrid>
+        <VideoGrid videosTutorials={videos} ></VideoGrid>  
         <FooterGrid></FooterGrid>
        
       </main>

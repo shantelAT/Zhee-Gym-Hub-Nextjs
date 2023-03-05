@@ -12,7 +12,7 @@ function ParagraphGridImageGrid() {
         <TextCard cardclassName= "textcard" titleclassName="textcard-title" textclassName= "none" showElement ></TextCard>
         </Col>
         <Col>
-        <ImageCard></ImageCard>
+        <ImageCard cardBody={"imagecard"} cardImage={"imagecard-image"}/>
         </Col>
       </Row>
     </div>
