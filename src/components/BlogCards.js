@@ -4,14 +4,14 @@ import Card from 'react-bootstrap/Card';
 function BlogCard({blog}) {
 
 console.log("blog", blog)
-  const { title, description, author, tutorialVideoUrl, thumbnailsUrl, videoTag} = blog;
-  console.log("{tutorialVideoUrl}:",{tutorialVideoUrl})
+  const { blogTitle, BlogBody, createdAt, author,  BlogImage, BlogTag} = blog;
+  
   
   return (
     <div className='blogcard'>
 
       <div >
-      <img  className='blogcard-image' src={tutorialVideoUrl} />
+      <img  className='blogcard-image' src={BlogImage} />
       </div>
         
       <div className= 'blogcard-captions'>
@@ -19,13 +19,13 @@ console.log("blog", blog)
           <Card.Img class="card-avatar" src='../aboutus.svg'/>
           <div >
           <Card.Text className='videocard-caption2'> {author}</Card.Text>
-          <Card.Text className='videocard-caption2'> Date of Published</Card.Text>
+          <Card.Text className='videocard-caption2'> </Card.Text>
           </div>
         </div  >
 
-        <Card.Title className='videocard-caption1' > {title}</Card.Title>
-        <Card.Text className='videocard-caption2'> {description}</Card.Text> 
-        <Button className='productcard-btn'>Read More ..</Button>
+        <Card.Title className='videocard-caption1' > {blogTitle}</Card.Title>
+        <Card.Text className='videocard-caption2'> {BlogBody} ...</Card.Text> 
+        <Button href="/individualblogpage" className='productcard-btn'>Read More</Button>
            
           </div>
       </div>

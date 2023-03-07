@@ -354,10 +354,11 @@ margin-bottom: 20px;
     justify-content: center;
     align-items: center;
     width: 400px;
-    height: 300px;
-    border: 2px solid  red;
+    height: 400px;
     margin: 10px;
     padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis
     /*border-radius: 20px;*/
     
 
@@ -376,6 +377,9 @@ margin-bottom: 20px;
     width: 80%;
     display: flex;
     font-family: 'Open Sans', sans-serif;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .card-avatar {
@@ -396,9 +400,18 @@ margin-bottom: 20px;
     color:var(--accent-grey-texts);
     font-weight: 100;
     margin-bottom: 0%;
+    width: auto;
+  }
+
+  .videocard-caption3{
+    color:var(--accent-grey-texts);
+    font-weight: 100;
+    margin-bottom: 0%;
 
   }
-  
+
+
+
   .linked {
     position: relative;
   }
@@ -529,8 +542,11 @@ button[type=submit]{
     white-space: nowrap;
     width: 80%;
     display: flex;
+    align-items: center;
     font-family: 'Open Sans', sans-serif;
     margin: 1;  
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .blogcard-captions{
     margin-left : 20px;
@@ -548,13 +564,10 @@ button[type=submit]{
 }
 .bloggrid-main{
     width: 100%;
-    background-color: #0000FF;
     justify-content: space-between;
-
-    align-items: center;
-
-    
+    align-items: center;  
 }
+
 .bloggrid{
     width: 90%;
     margin: 10px;
@@ -596,4 +609,22 @@ button[type=submit]{
     width: 20%;
     background-color: red;
     height: 20%;
+}
+
+.blogpage-single{
+    background-color: #0000FF;
+    align-items: center;
+}
+
+.blogcard-single{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+     
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #fff;
+
+  justify-content: center;
 }

@@ -66,7 +66,7 @@ if (error) return <div>Error...</div>;
 
       <main>
         <NavBar></NavBar>
-        <TextCard cardclassName= "textcard-hub" titleclassName="textcard-title" textclassName= "textcard-text"  ></TextCard>
+       { /*<TextCard cardclassName= "textcard-hub" titleclassName="textcard-title" textclassName= "textcard-text"  ></TextCard>*/}
         <HubNav ></HubNav>
         <VideoGrid videosTutorials={videos} ></VideoGrid>  
         <FooterGrid></FooterGrid>

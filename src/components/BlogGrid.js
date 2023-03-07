@@ -4,7 +4,7 @@ import BlogCards from "../components/BlogCards";
 function BlogGrid({blogList}) {
   console.log("{blogList}",{blogList})
   return (
-    <div className='bloggrid-main'>
+    <div >
       <ListGroup className='bloggrid' >
       {blogList?.map((eachblog) => (
       <ListGroup.Item >

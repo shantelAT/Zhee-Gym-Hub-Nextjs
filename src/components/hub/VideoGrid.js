@@ -12,7 +12,7 @@ console.log("videosTutorial:", videosTutorials)
     <div className='productgrid'>
       <Row>   
        {videosTutorials?.map((eachtutorial) => (
-        <Col  > 
+        <Col key={{eachtutorial}.id} > 
           <VideoCard tutorial={eachtutorial} /> 
         </Col>
         

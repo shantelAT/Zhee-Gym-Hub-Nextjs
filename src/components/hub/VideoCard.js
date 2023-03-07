@@ -6,10 +6,11 @@ import Card from 'react-bootstrap/Card';
 function VideoCard({tutorial}){
 
   console.log("tutorial", tutorial)
-  const { author, description, id, title, tutorialVideoUrl, thumbnailsUrl} = tutorial;
+  const {  title, description, author, tutorialVideoUrl, id, thumbnailsUrl, videoTag} = tutorial;
+  
 
   return (
-    <Card className='videocard ' href='/hubpage'>
+    <Card className='videocard ' href="{/tutorial/${tutorial.id}}">
       
       <Card.Img  className='videocard-image ' src={thumbnailsUrl} /> 
 
@@ -19,10 +20,12 @@ function VideoCard({tutorial}){
             <Card.Body >
                 <Card.Title className='videocard-caption1'> {title}</Card.Title>
                 <Card.Text className='videocard-caption2'> {author}</Card.Text>
-                <Card.Text className='videocard-caption2'> {description}</Card.Text> 
             </Card.Body>
           </div>
       </div>
+      <Card.Body>
+            <Card.Text className='videocard-caption3'> {description}</Card.Text> 
+            </Card.Body>
     </Card>
   );
 }

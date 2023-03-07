@@ -19,7 +19,7 @@ const storage = getStorage(firebaseApp );
 
     useEffect(()=> {
         ; (async () =>{
-            const collectionRef = collection(db, "tutorials")
+            const collectionRef = collection(db, "blogs")
             const  snapshots = await getDocs(collectionRef)
             const docs = snapshots.docs.map(doc => {
               const data = doc.data()
