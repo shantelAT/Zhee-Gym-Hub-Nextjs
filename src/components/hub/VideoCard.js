@@ -6,17 +6,15 @@ import Card from 'react-bootstrap/Card';
 function VideoCard({tutorial}){
 
   console.log("tutorial", tutorial)
-  const { author, description, id, title, tutorialVideoUrl} = tutorial;
+  const { author, description, id, title, tutorialVideoUrl, thumbnailsUrl} = tutorial;
 
   return (
     <Card className='videocard ' href='/hubpage'>
       
-        <Card.Img  className='videocard-image ' src={tutorialVideoUrl} />
-      
+      <Card.Img  className='videocard-image ' src={thumbnailsUrl} /> 
+
       <div className='videocard-caption'>
-        
         <Card.Img class="card-avatar" src='../aboutus.svg'/>
-        
           <div className='videocard-body'>
             <Card.Body >
                 <Card.Title className='videocard-caption1'> {title}</Card.Title>

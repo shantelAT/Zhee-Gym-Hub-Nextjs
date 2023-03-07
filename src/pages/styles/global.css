@@ -17,12 +17,12 @@ body {
     --accent-color-links: #0000FF;
     --accent-grey-texts:rgba(128, 128, 128, 0.921); 
   }
-
-
+  
   .navbar{
     width: 100%;
     background-color: var(--secondary-color);
     color: var(--primary-color);
+    display: flex;
   }
 
  .max-width{
@@ -54,6 +54,20 @@ body {
     border: 2px solid var(--accent-color-light);
     transition: all 0.3s ease;
 }
+
+#dropdown-basic{
+    background: var(--accent-color-light);
+    color: var(--primary-color);
+    font-family: 'Noto Serif Khojki', serif;
+    font-size:20px;
+    padding: "12px 36px";
+    margin: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid var(--accent-color-light);
+    transition: all 0.3s ease; 
+}
+
 
 .nav-btn:hover{
     color: var(--primary-color);
@@ -125,7 +139,7 @@ margin-bottom: 20px;
 
 /* About us */
 .textcard{
-    width: 40rem ;
+    width: 30rem ;
     height: 26rem;
     font-weight: 400;
     border: none;
@@ -325,16 +339,14 @@ margin-bottom: 20px;
 }
 
 .hubnav{
- padding-top: 15px;
+ padding: 15px !important; 
+ align-items: right;
 }
 
 .searchbar{
     display: flex;
-    align-items: left;
     justify-content: space-between;
-    padding-bottom: 40px;
     padding-left: 20px;
-     width: 400px auto;
 }
 
 .videocard{
@@ -343,7 +355,7 @@ margin-bottom: 20px;
     align-items: center;
     width: 400px;
     height: 300px;
-    border: 2px solid  whitesmoke;
+    border: 2px solid  red;
     margin: 10px;
     padding: 10px;
     /*border-radius: 20px;*/
@@ -409,13 +421,179 @@ margin-bottom: 20px;
     width: 30%;
   }
 
+.videoForm-sec1{
+    width: 50%;
+}
 
-  .videoForm{
-    display: flex;
-    justify-content: center;
+.blogForm-sec1{
+    width: 70%;
+}
+.videoForm-sec2{
+    background-color: white;
+    width: 50%;
+    margin: 10px;
+    padding: 20px;
+
+}
+
+.videoForm-sec2-half{
+    display: block;
     align-items: center;
+    justify-content: center;
+}
+
+.blogformbtn{
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 20px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 20px;
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.videoForm{
     height: 100%;
     width: 100%;
     margin: 20px ;
-    align-items: first baseline;
+    display: inline-flex;
+    justify-content: center;
   }
+
+.form{
+    width: 95%;
+    display: flex;
+    height: 95%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.videouploadcard{
+    width: 95%;
+    height: 25em;
+    margin: 10px;
+
+}
+
+.uploadImageIcon{
+    width: 5rem;
+    padding: 10px;
+
+    
+}
+.uploadImageIconvideo{
+    width: 20em;
+    margin: 10px 40px 40px 40px;
+    padding: 10px;
+    
+}
+
+
+input[type=file]{
+    width: 0;
+    height: 0;
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    opacity: 40;
+    
+}
+
+button[type=submit]{
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 20px;
+    padding: 12px 36px;
+    font-weight: 400;
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+
+}
+
+
+/*  Bloog PAGE*/
+
+.wblogcard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background-color: #0000FF;
+}
+.blogcard{
+    white-space: nowrap;
+    width: 80%;
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    margin: 1;  
+}
+.blogcard-captions{
+    margin-left : 20px;
+}
+
+.blogcard-image{
+    width: 20em;
+    height: 15em;
+    align-items: center;
+}
+
+.blogcard-image-image{
+    width: 80%;
+    
+}
+.bloggrid-main{
+    width: 100%;
+    background-color: #0000FF;
+    justify-content: space-between;
+
+    align-items: center;
+
+    
+}
+.bloggrid{
+    width: 90%;
+    margin: 10px;
+    justify-content: space-between;   
+}
+
+.blogpage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #161b22;
+}
+
+.videoplayer{
+    display: block;
+}
+
+.homeplayer{
+    height: 1000px; 
+    display: flex;
+}
+
+.mainplayer{
+    width: 50em;
+    margin: 10px;
+    height: 60%;
+    background-color: #dbb299;
+}
+
+.mainplayer-2{
+    width: 30%;
+    margin:  10px 10px 10px 0px;
+    height: 60%;
+    background-color: #0000FF;
+}
+
+
+.blog-recom{
+    width: 20%;
+    background-color: red;
+    height: 20%;
+}

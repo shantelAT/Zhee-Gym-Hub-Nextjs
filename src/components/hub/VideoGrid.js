@@ -23,30 +23,6 @@ console.log("videosTutorial:", videosTutorials)
     
   );
   
-  console.log("tutorial:",tutorial)
-    /*
-{thumbnailList.map((url) => {
-        return(
-          <Col> 
-          <VideoCard thumbnail={url}/> 
-          </Col>
-        ) 
-        })}
-
-        const docs = videosTutorial.map((video) => {  //loop through list
-          const data = doc.data()
-          data.id = doc.id
-
-          return data
-        })
-        console.log("docs from:",docs)
-
-        < {videosTutorial?.map(({eachtutorial}) => (
-        <Col key={eachtutorial.id} > 
-          <VideoCard tutorial={eachtutorial} /> 
-        </Col>
-        ))}
-*/
 }
 
 

@@ -1,4 +1,5 @@
 import Container from 'react-bootstrap/Container';
+import Dropdown from 'react-bootstrap/Dropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import React, { useEffect } from 'react';
@@ -21,10 +22,12 @@ function NavBar({showElement}) {
   }, []);
   
 */
+
+//{showElement ? <Nav.Link href='/signinpage' className='nav-btn'>Sign in</Nav.Link> : <Card.Img class="card-avatar" src='../aboutus.svg'/>}
   return (
     <>
   
-      <Navbar  sticky="top" class="navbar">
+      <Navbar  sticky="top" className="navbar">
         <Container>
           <Navbar.Brand href="#home">
             <img
@@ -37,7 +40,8 @@ function NavBar({showElement}) {
             
           </Navbar.Brand>
         </Container >
-        < Nav  activeKey="/home" class="max-width" >
+        
+        < Nav  activeKey="/home" className="max-width" >
 
         < Nav.Item>
           <Nav.Link href="/" className='nav-link'>Home</Nav.Link>
@@ -48,18 +52,28 @@ function NavBar({showElement}) {
         </Nav.Item>
 
         <Nav.Item>
-          <Nav.Link eventKey="link-2" className='nav-link'>Store</Nav.Link>
+          <Nav.Link eventKey="link-2" href='/blogpage'className='nav-link'>Blog</Nav.Link>
+        </Nav.Item>
+
+        <Dropdown>
+
+        
+          <Dropdown.Toggle id="dropdown-basic">
+          Upload 
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+              <Dropdown.Item href='/submitfilepage'>Upload Tutorial </Dropdown.Item>
+                <Dropdown.Item href='/submitblogpage'>Upload Blog</Dropdown.Item>
+              </Dropdown.Menu>
+              </Dropdown>
+
+        <Nav.Item>
+        {showElement ? <Nav.Link href='/signinpage' className='nav-btn'>Sign in</Nav.Link> : <Card.Img class="card-avatar" src='../aboutus.svg'/>}
         </Nav.Item>
 
         <Nav.Item>
-          <Nav.Link   className='nav-link'>Dieting</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-        {showElement ? <Nav.Link href='/signinpage' className='nav-btn'>Sign in</Nav.Link> : <Card.Img class="card-avatar" src='../aboutus.svg'/>}
-          
-        </Nav.Item>
-        <Nav.Item>
-        <span class="material-symbols-outlined"> shopping_cart_checkout</span>
+        <span className="material-symbols-outlined"> </span>
         </Nav.Item>
       </Nav>
       </Navbar>

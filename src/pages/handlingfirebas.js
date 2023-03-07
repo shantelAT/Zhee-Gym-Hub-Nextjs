@@ -29,9 +29,21 @@ export function createTutorialDoc() {
     return doc(collection(db, "tutorials"));
   }
 
+  export function createBlogDoc() {  // Change to one form
+    return doc(collection(db, "blogs"));
+  }
+
   export const uploadFile = async(videoFile, pathtofolder) => { 
     const storageRef = ref(storage, pathtofolder);
     const result = await uploadBytes(storageRef, videoFile);
+    alert("Tutorial Uploaded")
+    return getDownloadURL( result.ref)
+   
+  };
+
+  export const uploadBlogFile = async(blogImage, pathtofolder) => { 
+    const storageRef = ref(storage, pathtofolder);
+    const result = await uploadBytes(storageRef, blogImage);
     alert("Tutorial Uploaded")
     return getDownloadURL( result.ref)
    
@@ -46,3 +58,9 @@ export function setTutorialData(dataRefer, data) {
     });
 }
 
+export function setBlogData(dataRefer, data) {
+  return setDoc(dataRefer, {
+    ...data,
+    createdAt: serverTimestamp(),
+  });
+}
