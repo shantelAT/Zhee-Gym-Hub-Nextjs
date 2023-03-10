@@ -10,29 +10,53 @@ function NavBarHome({showElement}) {
 
   useEffect(() => {
     function handleScroll() {
+      // sticky navbar on scroll script
       if (window.scrollY > 20) {
-        document.querySelector('.navbar-home').classList.add('sticky');
+        document.querySelector('.home').classList.add('sticky');
       } else {
-        document.querySelector('.navbar-home').classList.remove('sticky');
+        document.querySelector('.home').classList.remove('sticky');
       }
 
+      // scroll-up button show/hide script
       if (window.scrollY > 500) {
         document.querySelector('.scroll-up-btn').classList.add('show');
       } else {
         document.querySelector('.scroll-up-btn').classList.remove('show');
       }
     }
+
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [])
+
+  // useEffect(() => {
+  //   function handleScroll() {
+  //     if (window.scrollY > 20) {
+  //       document.querySelector('.navbar-home').classList.add('sticky');
+  //     } else {
+  //       document.querySelector('.navbar-home').classList.remove('sticky');
+  //     }
+
+  //     if (window.scrollY > 500) {
+  //       document.querySelector('.scroll-up-btn').classList.add('show');
+  //     } else {
+  //       document.querySelector('.scroll-up-btn').classList.remove('show');
+  //     }
+  //   }
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
   
 
   return (
     <>
   
-      <Navbar  sticky="top" className="navbar-home">
+      <Navbar  sticky="top" className="home">
         <Container>
           <Navbar.Brand href="#home">
             <img

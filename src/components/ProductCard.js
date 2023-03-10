@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import React from "react";
 
 function ProductCard({product}) {
-  console.log("products from card", product)
+  
   const { description, name, src, productImage} = product;
 
   return (
@@ -11,8 +11,8 @@ function ProductCard({product}) {
     <Card  className='productcard'>
       <Card.Img  className='productcard-image' src={productImage} />
       <Card.Body className='productcard-body'>
-        <Card.Title >{name}</Card.Title>
-        <Card.Text>
+        <h3 style={{color:"black"}} >{name}</h3>
+        <Card.Text style={{color:"black"}} >
           {description}
         </Card.Text>
       </Card.Body>

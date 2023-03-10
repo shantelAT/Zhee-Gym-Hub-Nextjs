@@ -6,10 +6,10 @@ import {videosTutorials, docs} from "@/pages/hubpage";
 
 
 export default function VideoGrid({videosTutorials}) {  //collect list of videos from firebase storage
-console.log("videosTutorial:", videosTutorials)
+
 
   return (
-    <div className='productgrid'>
+    <div className='videogrid'>
       <Row>   
        {videosTutorials?.map((eachtutorial) => (
         <Col key={{eachtutorial}.id} > 

@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import FormAlert from "@/components/FormAlert";
 import FormField from "@/components/FormField";
 import AuthSocial from "@/components/AuthSocial";
-import { useAuth } from "@/pages/util/auth";
+import { useAuth } from "@/util/auth";
 
 function ReauthModal(props) {
   const auth = useAuth();

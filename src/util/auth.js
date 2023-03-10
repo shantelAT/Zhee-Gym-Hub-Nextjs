@@ -30,7 +30,7 @@ import {
 import { firebaseApp } from "./firebase";
 import { useUser, createUser, updateUser } from "./db";
 import router from "next/router";
-import PageLoader from "@/components/PageLoader";
+
 
 // Whether to merge extra user data from database into `auth.user`
 const MERGE_DB_USER = true;

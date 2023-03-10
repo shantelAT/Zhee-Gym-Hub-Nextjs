@@ -6,7 +6,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 
 export default function VideoGrid({videos}) {
-  console.log(videos);
   return (
     <div className='verticalvideogrid'>
       <ListGroup>

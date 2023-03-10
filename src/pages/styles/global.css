@@ -32,7 +32,7 @@ body {
     --primary-color: #161b22;
     --secondary-color: #ffbd59;
     --accent-color: #150c1a;
-    --accent-color2: #dbb299;
+    --accent-color2: #b342f5;
     --accent-color-light: #fff;
     --accent-color-links: #0000FF;
     --accent-grey-texts:rgba(128, 128, 128, 0.921); 
@@ -52,12 +52,19 @@ body {
     position: relative;
     justify-content: center;
     height: 85px;
-    background: var(--accent-color);
+    background: var(--accent-color2);
   }
 
+  .navbarhome{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 85px;
+  }
   .sticky{
     padding: 15px 0;
-    background: var(--accent-color);
+    background:var(--accent-color);
     color:var(--accent-color-light);
 }
 
@@ -153,19 +160,12 @@ position: relative;
 }
 
 .carousel-h2-span{
-    color:#b342f5;
+    color:var(--accent-color2);
     transition: all 0.3s ease;
 }
 
 .carousel-p{
     font-size: 27px;
-}
-
-.typing{
-    color: var(--secondary-color);
-    font-family: 'Russo One', sans-serif;
-    font-size: 30px;
-
 }
 .carousel-btn {
     color: var(--accent-color-light);
@@ -179,10 +179,12 @@ position: relative;
     transition: all 0.3s ease;
     transform: translateX(50%);
 }
-
 .carousel-btn:hover{
-    color: var(--secondary-color);
+ 
+    color: var(--accent-color2);
     background: none;
+    font-size:23px;
+
 }
 
 /* About us */
@@ -252,9 +254,9 @@ position: relative;
 } 
 
 .textcard-btn:hover{
-    color: var(--secondary-color);
+    color: var(--accent-color2);
     background: none;
-    font-size:22px;
+    font-size:20px;
 }
 
 .imagecard{
@@ -294,6 +296,7 @@ position: relative;
     border: none;
     box-shadow: 7px 10px 10px 0px grey;
     border-radius: 20px;
+    margin-left: 50px;
 }
 
 .productcard-image{
@@ -320,7 +323,10 @@ position: relative;
     color: var(--secondary-color);
     background: none;
 }
-
+.productlink{
+    color: var(--primary-color);
+    text-decoration: none;
+}
 /*  Contact Form */
 
 .contactform-grid{
@@ -331,7 +337,7 @@ position: relative;
     width: 100%;  
     padding: 20px;
     align-items: first baseline;
-    background: var(--secondary-color);
+    background: var(--accent-color);
 }
 
 .contactform-form{
@@ -377,7 +383,7 @@ position: relative;
     padding: 12px 20px;
     margin-top: 20px;
     font-weight: 400;
-    border-radius: 20px;
+    border-radius: 50px;
     border: 2px solid var(--accent-color-light);
 }
 
@@ -403,6 +409,19 @@ position: relative;
 
 /********  HUB PAGE ********/
 
+.videogrid {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 98%;  /*fix later*/
+    margin: 20px ;
+    padding: 20px;
+    align-items: first baseline; 
+    background-image: url("/weightinhand.jpg"); 
+}
+
 .textcard-hub{
     justify-content: center;
     align-items: center;
@@ -427,6 +446,8 @@ position: relative;
     padding-left: 20px;
 }
 
+
+
 .videocard{
     display: flex;
     justify-content: center;
@@ -437,7 +458,6 @@ position: relative;
     padding: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
-  background-color: #b342f5;
     /*border-radius: 20px;*/
     
 
@@ -457,27 +477,72 @@ position: relative;
     display: flex;
     font-family: 'Open Sans', sans-serif;
     white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+    .videocard-caption1 {
+        color:var(--primary-color);
+        font-weight: bold;
+        margin-bottom: 0%;
+        
+      }
+    
+      .videocard-caption2 {
+        color:var(--accent-grey-texts);
+        font-weight: 100;
+        margin-bottom: 0%;
+        width: auto;
+      }
+    
+      .videocard-caption3{
+        color:var(--accent-grey-texts);
+        font-weight: 100;
+        margin-bottom: 0%;
+    
+      }
+
+.recommendedvideos{
+
 }
 
+/*********** INDIVIDUAL VIDEO PAGE ************/
+.tutorialPlayer{
+    width: 70%;
+    height: 900px;
+    padding: 10px;
+} 
 .card-avatar {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
   }
 
-  .videocard-caption1 {
+.videoplayer-caption{
+    width: 80%;
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 10px;
+
+}
+  .videoplayer-caption1 {
     color:var(--primary-color);
     font-weight: bold;
     margin-bottom: 0%;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
   }
 
-  .videocard-caption2 {
+  .videoplayer-caption2 {
     color:var(--accent-grey-texts);
     font-weight: 100;
-    margin-bottom: 0%;
+    margin: 10px;
     width: auto;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
   }
 
   .videocard-caption3{
@@ -486,7 +551,6 @@ position: relative;
     margin-bottom: 0%;
 
   }
-
 
 
   .linked {
@@ -594,13 +658,14 @@ input[type=file]{
 
 button[type=submit]{
     display: inline-block;
-    background: var(--secondary-color);
+    background: var(--accent-color-light);
     color: var(--primary-color);
     font-size: 20px;
-    padding: 12px 36px;
+    padding: 12px 20px;
+    margin-top: 20px;
     font-weight: 400;
-    border: 2px solid var(--secondary-color);
-    transition: all 0.3s ease;
+    border-radius: 10px;
+    border: 2px solid var(--accent-color-light);
 
 }
 
@@ -693,7 +758,7 @@ button[type=submit]{
 }
 
 .bloggrid{
-    width: 70%;
+    width: 100%;
     margin: 10px;  
     background-color: blue;
     border: rebeccapurple;
@@ -839,12 +904,12 @@ margin-left: 10px;
     position: fixed;
     height: 45px;
     width: 42px;
-    background: #fa7a4a;
+    background: var(--accent-color2);
     right: 30px;
     bottom: 10px;
     text-align: center;
     line-height: 45px;
-    color: #fff;
+    color: var(--accent-color-light);
     z-index: 9999;
     font-size: 30px;
     border-radius: 6px;

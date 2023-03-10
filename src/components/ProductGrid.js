@@ -4,7 +4,7 @@ import ProductCard from './Productcard';
 
 
 export default function GridAutoLayout({products}) {
-  console.log("products",products)
+
   return (
     <div className='productgrid-product'>
       <Row  >

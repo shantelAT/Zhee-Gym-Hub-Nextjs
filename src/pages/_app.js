@@ -5,8 +5,8 @@ import './styles/hubpage.module.css'
 import "./styles/global.scss";
 import "./styles/components/index.scss";
 import NavbarCustom from "@/components/NavbarCustom";
-import { AuthProvider } from "./util/auth";
-import { QueryClientProvider } from "./util/db";
+import { AuthProvider } from "../util/auth";
+import { QueryClientProvider } from "../util/db";
 
 
 

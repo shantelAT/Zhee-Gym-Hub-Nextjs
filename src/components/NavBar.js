@@ -9,10 +9,6 @@ import Card from 'react-bootstrap/Card';
 
 function NavBar({showElement}) {
 
- 
-    
-  
-
   return (
     <>
   

@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import NavBar from "@/components/NavBar";
 import FooterGrid from "@/components/FooterGrid";
 import BlogLayoutCard from '@/components/BlogLayoutComponent';
-import { firebaseApp } from "../util/firebase";
+import { firebaseApp } from "../../util/firebase";
 
 import {
   getFirestore,
@@ -13,11 +13,9 @@ import {
   } from "firebase/firestore";
 
 export async function getBlogs(blogId) { 
-  console.log("collectionRef get blog function called")
   const db = getFirestore(firebaseApp);
 
   const collectionRef = doc(db, "blogs", blogId)
-  console.log("collectionRef", collectionRef)
       const  snapshots = await getDoc(collectionRef)
       const docs = snapshots.data() 
       return docs
@@ -26,7 +24,6 @@ export async function getBlogs(blogId) {
 export default function blogPage() {
   const router = useRouter()
   const blogId = router.query.id
-  console.log("blogId", blogId)
   
   const [blog, setBlog] = useState({});
 
@@ -34,7 +31,6 @@ export default function blogPage() {
     if(blogId){
       getBlogs(blogId).then(data => setBlog(data))
   }
-  console.log("this is useEffect")
   },[blogId])
 
   return (

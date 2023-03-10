@@ -2,8 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 function BlogCard({blog}) {
-
-console.log("RecommendedBlogCard", blog)
   const { blogTitle, BlogBody, createdAt, author, id, BlogImage, BlogTag} = blog;
   
   

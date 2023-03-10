@@ -14,9 +14,9 @@ function ContactForm() {
         <Form.Control type="email" className="contactform-field" placeholder="Email" />
         <textarea className="contactform-message"  placeholder="Enter message here"/>
       </Form.Group>
-      <Button className='contactform-btn' type="submit">
+      <button className='contact-btn' type="submit">
         Submit
-      </Button>
+      </button>
     </Form>
     </div>
   );

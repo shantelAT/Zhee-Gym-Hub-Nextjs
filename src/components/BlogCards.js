@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 
 function BlogCard({blog}) {
 
-console.log("blog", blog)
   const { blogTitle, BlogBody, createdAt, author, id, BlogImage, BlogTag} = blog;
   
   

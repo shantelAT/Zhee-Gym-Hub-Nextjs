@@ -5,7 +5,7 @@ import {useState, useEffect} from "react";
 import NavBar from "@/components/NavBar";
 import VideoPlayer from '@/components/VideoPlayer';
 import FooterGrid from "@/components/FooterGrid";
-import { firebaseApp } from "../util/firebase";
+import { firebaseApp } from "../../util/firebase";
 import { getFirestore,doc,getDoc} from "firebase/firestore";
 
 export async function getTutorial(tutorialId){
@@ -28,7 +28,6 @@ export default function tutorialPage(){
   }
   },[tutorialId])
 
-  console.log("tutorial :",tutorial)
 
   return (
     <main className='videoplayer' >

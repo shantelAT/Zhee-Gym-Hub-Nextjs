@@ -2,9 +2,9 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import React from "react";
 import  { useState } from "react"; 
-import {uploadBlogFile} from "../pages/handlingfirebas";
-import {createBlogDoc} from "../pages/handlingfirebas";
-import {setBlogData} from "../pages/handlingfirebas";
+import {uploadBlogFile} from "../util/handlingfirebas";
+import {createBlogDoc} from "../util/handlingfirebas";
+import {setBlogData} from "../util/handlingfirebas";
 import { TagsInput } from "react-tag-input-component"; 
  
 function HandlingBlogSubmissions() {
@@ -21,7 +21,6 @@ function HandlingBlogSubmissions() {
   };
 
   const handleBlogAuthorChange = (event) => {
-    console.log(event.target.value)
     setAuthor(event.target.value);
   };
 
@@ -34,14 +33,12 @@ function HandlingBlogSubmissions() {
   };
   
   const handleBlogTagsChange = (event) =>{
-    console.log(event.target.value)
     setBlogTag(event.target.value)
   }
 
   const bloghandleSubmit = async (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("Handled function called")
     try {
       const BlogRef = createBlogDoc(); 
       const  uploadedBlogImageUrl = await uploadBlogFile(blogImage, `/blog-images/${BlogRef.id}`);
@@ -55,7 +52,6 @@ function HandlingBlogSubmissions() {
       };
 
       setBlogData(BlogRef, blogPost);
-      console("blogPost:",blogPost)
        
     } catch (e) {
       console.log(e);   

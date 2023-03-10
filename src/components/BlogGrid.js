@@ -3,7 +3,6 @@ import BlogCards from "../components/BlogCards";
 import RecommendedBlogCard from "../components/RecommendedBlogCard";
 
 function BlogGrid({blogList}) {
-  console.log("{blogList}",{blogList})
   return (
     <div className='bloggrid-main'>
       <div>
@@ -15,7 +14,7 @@ function BlogGrid({blogList}) {
         ))} 
       </ListGroup>
       </div>
-      <div>
+      {/* <div>
       <ListGroup className='bloggrid2' >
     {blogList?.map((eachblog) => (
       <ListGroup.Item >
@@ -23,7 +22,7 @@ function BlogGrid({blogList}) {
       </ListGroup.Item>
       ))} 
     </ListGroup>
-      </div>
+      </div> */}
 
    
     </div>

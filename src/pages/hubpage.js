@@ -7,7 +7,7 @@ import VideoGrid from "@/components/hub/VideoGrid";
 import HubNav from "@/components/hub/HubNav";
 import {ref, getDownloadURL, listAll } from "firebase/storage"
 import {useState, useEffect} from "react"
-import { firebaseApp, firestore } from "./util/firebase";
+import { firebaseApp, firestore } from "../util/firebase";
 import {getStorage } from "firebase/storage"
 import { collection, getDocs, getFirestore  } from "firebase/firestore";
 
@@ -38,8 +38,6 @@ if (error) return <div>Error...</div>;
       })()
     }, [])
 
-    
-    console.log("videos", videos)
   return (
     <>
       <Head>
@@ -59,7 +57,6 @@ if (error) return <div>Error...</div>;
         <HubNav ></HubNav>
         <VideoGrid videosTutorials={videos} ></VideoGrid>  
         <FooterGrid></FooterGrid>
-       
       </main>
     </>
   );

@@ -4,10 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 
 function BlogLayoutCard({ablog}){
-  console.log("this is a",ablog)
   const { blogTitle, BlogBody, createdAt, author, id, BlogImage, BlogTag} = ablog;
-  console.log(createdAt)
-
     return (
       
     <Card  className="blogpage-main">

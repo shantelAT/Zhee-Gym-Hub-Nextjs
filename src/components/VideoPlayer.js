@@ -4,15 +4,25 @@ import ReactPlayer from 'react-player';
 import Card from 'react-bootstrap/Card';
   
 export default function VideoPlayer({atutorial}){
-  console.log("tutorial", atutorial)
+ 
   const { title, description, author, tutorialVideoUrl, id, thumbnailsUrl, videoTag} = atutorial;
-  console.log("author",author)
-  console.log("title",title)
+ 
   return (
-    <main>
-        <video autoPlay loop controls type='video/mp4'  src={tutorialVideoUrl} style={{width:"100%"}}/>
-        <h2 className='videocard-caption1'> {title} </h2>
-        <p className='videocard-caption2'> {author}</p>
+    <main className='tutorialPlayer' >
+      <div>
+      <video autoPlay loop controls type='video/mp4'  src={tutorialVideoUrl} style={{width:"100%"}}/>
+        <h2  className='videoplayer-caption1'> {title} </h2>
+        <div className='videoplayer-caption' >
+          <img className="card-avatar" src='../aboutus.svg'/>
+        <p className='videoplayer-caption2'> {author}</p>
+        </div>
+        <p className='videoplayer-caption2'> {description}</p>
+
+      </div>
+       <div className='recommendedvideos'>
+
+       </div>
+       
     </main>
     
              

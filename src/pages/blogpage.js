@@ -6,13 +6,12 @@ import BlogGrid from "@/components/BlogGrid";
 
 import HubNav from "@/components/hub/HubNav";
 import {useState, useEffect} from "react"
-import { firebaseApp, firestore } from "./util/firebase";
+import { firebaseApp, firestore } from "../util/firebase";
 import {getStorage } from "firebase/storage"
 import { collection, getDocs, getFirestore  } from "firebase/firestore";
 
 
 export default function BlogHome() {
-    console.log("Hello")
 const [Blogs, setBlogs] = useState([]); 
 const db = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp );
@@ -30,7 +29,6 @@ const storage = getStorage(firebaseApp );
             setBlogs(docs)
         })()
       }, [])
-      console.log("Blogs:", Blogs)
 
 return (
     <>

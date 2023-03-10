@@ -1,7 +1,7 @@
 import React from "react";
 import {ref, getDownloadURL, uploadBytes} from "firebase/storage";
 import {getStorage } from "firebase/storage"
-import { firebaseApp } from "./util/firebase";
+import { firebaseApp } from "./firebase";
 
 import { //douplicate, another in db.js
   getFirestore,
@@ -63,35 +63,4 @@ export function setBlogData(dataRefer, data) {
     ...data,
     createdAt: serverTimestamp(),
   });
-}
-
-// export async function getDataById(tutorialId) {
-//   const docRef = firebaseApp.collection("tutorials").doc(tutorialId);
-//   const doc = await docRef.get();
-
-//   if (doc.exists) {
-//     return { id: doc.id, ...doc.data() };
-//   } else {
-//     return null;
-//   }
-// }
-
-const getTutorial = async (tutorialId) => {
-  const db = getFirestore(firebaseApp);
-  
-  const collectionRef = doc(db, "tutorials"+ tutorialId, )
-  console.log("collectionRef", collectionRef)
-      const  snapshots = await getDoc(collectionRef)
-      const docs = snapshots.data() 
-      return docs
-}
-
-const getBlog = async (tutorialId) => {
-  const db = getFirestore(firebaseApp);
-  
-  const collectionRef = doc(db, "tutorials", tutorialId, )
-  console.log("collectionRef", collectionRef)
-      const  snapshots = await getDoc(collectionRef)
-      const docs = snapshots.data() 
-      return docs
 }

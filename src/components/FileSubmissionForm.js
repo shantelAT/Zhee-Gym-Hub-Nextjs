@@ -1,9 +1,9 @@
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import React from "react";
-import {uploadFile} from "../pages/handlingfirebas";
-import {createTutorialDoc} from "../pages/handlingfirebas";
-import {setTutorialData} from "../pages/handlingfirebas";
+import {uploadFile} from "../util/handlingfirebas";
+import {createTutorialDoc} from "../util/handlingfirebas";
+import {setTutorialData} from "../util/handlingfirebas";
 
  
 function HandlingTutorialSubmissions() {
@@ -17,11 +17,9 @@ function HandlingTutorialSubmissions() {
 
   const handleVideoFileSelect = (event) => {
     setVideoFile(event.target.files[0]);
-    console.log("handleVideoFileSelect:", event.target.files[0]);
   };
 
   const handleThumbnailFileSelect = (event) => {
-    console.log("handleThumbnailFileSelect", event.target.files[0]);
     setThumbnailFile(event.target.files[0]);
   }
   const handleVideoTagsChange = (event) =>{
@@ -29,32 +27,26 @@ function HandlingTutorialSubmissions() {
   }
 
   const handleDescriptionChange = (event) => {
-    console.log(event.target.value)
     setDescription(event.target.value);
   };
 
   const handleAuthorChange = (event) => {
-    console.log(event.target.value)
     setAuthor(event.target.value);
   };
 
   const handleVideoTitleChange = (event) => {
-    console.log(event.target.value)
     setTitle(event.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("Handled function called")
     
     try {
       const tutorialRef = createTutorialDoc(); 
       const  uploadedVideoUrl = await uploadFile(videoFile, `/tutorial-videos/${tutorialRef.id}`);
-      console.log("uploadedVideoUrl:", uploadedVideoUrl)
 
       const uploadedThumbnailUrl = await uploadFile( thumbnailFile, `/tutorial-video-thumbnail/${tutorialRef.id}`);
-      console.log("uploadedThumbnailoUrl:", uploadedThumbnailUrl)
    
       const tutorial = {
         title,
@@ -66,7 +58,7 @@ function HandlingTutorialSubmissions() {
       };
 
       setTutorialData(tutorialRef, tutorial);
-      console("tutorial",tutorial)
+      ("tutorial",tutorial)
      
       // when done, do stuff
     } catch (e) {

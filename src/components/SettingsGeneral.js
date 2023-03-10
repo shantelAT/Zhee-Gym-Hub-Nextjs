@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 import { useForm } from "react-hook-form";
 import FormField from "@/components/FormField";
-import { useAuth } from "@/pages/util/auth";
+import { useAuth } from "@/util/auth";
 
 function SettingsGeneral(props) {
   const auth = useAuth();
