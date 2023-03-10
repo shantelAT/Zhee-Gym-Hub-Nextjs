@@ -1,6 +1,6 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ProductCard from './Productcard';
+import ProductCard from '@/components/ProductCard';
 
 
 export default function GridAutoLayout({products}) {
