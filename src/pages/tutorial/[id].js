@@ -17,7 +17,7 @@ export async function getTutorial(tutorialId){
       return docs
 }
 
-export default function tutorialPage(){
+export default function TutorialPage(){
   const router = useRouter()
   const tutorialId = router.query.id
   const [tutorial, setTutorial] = useState([]);

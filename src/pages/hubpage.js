@@ -13,15 +13,11 @@ import { collection, getDocs, getFirestore  } from "firebase/firestore";
 
 
 export default function ZheeHub() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
   const [videos, setVideos] = useState([]); 
   const storage = getStorage(firebaseApp );
   const tutotialListRef = ref(storage, "tutorial-videos")
   const db = getFirestore(firebaseApp);
   
-if (isLoading) return <div>Loading...</div>;
-if (error) return <div>Error...</div>;
 
 //get list of thumbanil from firebase storage
     useEffect(()=> {

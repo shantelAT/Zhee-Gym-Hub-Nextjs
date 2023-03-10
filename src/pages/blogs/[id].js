@@ -21,7 +21,7 @@ export async function getBlogs(blogId) {
       return docs
 }
 
-export default function blogPage() {
+export default function BlogPage() {
   const router = useRouter()
   const blogId = router.query.id
   

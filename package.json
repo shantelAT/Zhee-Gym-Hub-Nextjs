@@ -29,6 +29,8 @@
   },
   "devDependencies": {
     "@expo/webpack-config": "^18.0.1",
-    "@zeit/next-css": "^1.0.1"
+    "@zeit/next-css": "^1.0.1",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4"
   }
 }

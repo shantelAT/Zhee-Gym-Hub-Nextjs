@@ -8,7 +8,7 @@ function BlogGrid({blogList}) {
       <div>
         <ListGroup className='bloggrid' >
         {blogList?.map((eachblog) => (
-        <ListGroup.Item >
+        <ListGroup.Item key={eachblog.id}>
           <BlogCards blog={eachblog}></BlogCards>
         </ListGroup.Item>
         ))} 
