@@ -9,21 +9,10 @@ import Card from 'react-bootstrap/Card';
 
 function NavBar({showElement}) {
 
-/* 
-  useEffect(() => {
-    const menuBtn = document.querySelector('.menu-btn');
-    const navbarMenu = document.querySelector('.navbar .m-button');
-    const menuBtnIcon = document.querySelector('.menu-btn');
-
-    menuBtn.addEventListener('click', () => {
-      navbarMenu.classList.toggle('active');
-      menuBtnIcon.classList.toggle('active');
-    });
-  }, []);
+ 
+    
   
-*/
 
-//{showElement ? <Nav.Link href='/signinpage' className='nav-btn'>Sign in</Nav.Link> : <Card.Img class="card-avatar" src='../aboutus.svg'/>}
   return (
     <>
   
@@ -32,7 +21,7 @@ function NavBar({showElement}) {
           <Navbar.Brand href="#home">
             <img
               alt=""
-              src='../zheé.svg'
+              src='../1.svg'
               width="200"
               height="90"
               className="d-inline-block align-top"
@@ -44,21 +33,21 @@ function NavBar({showElement}) {
         < Nav  activeKey="/home" className="max-width" >
 
         < Nav.Item>
-          <Nav.Link href="/" className='nav-link'>Home</Nav.Link>
+          <Nav.Link href="/" style={{color:"white"}} className='nav-link'>Home</Nav.Link>
         </Nav.Item>
 
         <Nav.Item>
-          <Nav.Link eventKey="link-1" href='/hubpage' className='nav-link'>Zheé-Hub </Nav.Link>
+          <Nav.Link style={{color:"white"}} eventKey="link-1" href='/hubpage' className='nav-link'>Zheé-Hub </Nav.Link>
         </Nav.Item>
 
         <Nav.Item>
-          <Nav.Link eventKey="link-2" href='/blogpage'className='nav-link'>Blog</Nav.Link>
+          <Nav.Link style={{color:"white"}} eventKey="link-2" href='/blogpage'className='nav-link'>Blog</Nav.Link>
         </Nav.Item>
 
         <Dropdown>
 
         
-          <Dropdown.Toggle id="dropdown-basic">
+          <Dropdown.Toggle style={{color:"white"}} id="dropdown-basic" >
           Upload 
           </Dropdown.Toggle>
 
@@ -69,14 +58,19 @@ function NavBar({showElement}) {
               </Dropdown>
 
         <Nav.Item>
-        {showElement ? <Nav.Link href='/signinpage' className='nav-btn'>Sign in</Nav.Link> : <Card.Img class="card-avatar" src='../aboutus.svg'/>}
+        {showElement ? <Nav.Link style={{color:"white"}} href='/signinpage' className='nav-btn'>Sign in</Nav.Link> : <Card.Img className="card-avatar" src='../aboutus.svg'/>}
         </Nav.Item>
 
         <Nav.Item>
         <span className="material-symbols-outlined"> </span>
         </Nav.Item>
       </Nav>
+
+      <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
       </Navbar>
+
       
     </>
   );

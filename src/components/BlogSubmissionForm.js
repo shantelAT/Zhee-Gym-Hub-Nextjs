@@ -51,7 +51,7 @@ function HandlingBlogSubmissions() {
         author: author,
         BlogImage: uploadedBlogImageUrl,
         BlogBody: blogBody,
-        BlogTag: blogTags
+        BlogTag: blogTags.split(',')
       };
 
       setBlogData(BlogRef, blogPost);
@@ -83,7 +83,7 @@ function HandlingBlogSubmissions() {
         </Form.Group>
         
         <Form.Group >
-          <Form.Label >Tags: </Form.Label>
+          <Form.Label >Tags: use comma to seperate </Form.Label>
           <Form.Control onChange={handleBlogTagsChange}  name="tags" placeHolder="tags"/>
         </Form.Group>
 

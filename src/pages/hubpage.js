@@ -15,25 +15,11 @@ import { collection, getDocs, getFirestore  } from "firebase/firestore";
 export default function ZheeHub() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [videos, setVideos] = useState([]); //important
-  //const [thumbnailsList, setThumbnailList] = useState([]);
+  const [videos, setVideos] = useState([]); 
   const storage = getStorage(firebaseApp );
   const tutotialListRef = ref(storage, "tutorial-videos")
   const db = getFirestore(firebaseApp);
   
- /* React.useEffect(() => {
-    setIsLoading(true);
-    getVideos()
-      .then((response) => {
-        setVideos(response);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setError(true);
-      });
-  }, []);
-*/
 if (isLoading) return <div>Loading...</div>;
 if (error) return <div>Error...</div>;
 
@@ -65,6 +51,9 @@ if (error) return <div>Error...</div>;
       </Head>
 
       <main>
+      <div class="scroll-up-btn">
+         <i class="fas fa-angle-up"></i>
+      </div>
         <NavBar></NavBar>
        { /*<TextCard cardclassName= "textcard-hub" titleclassName="textcard-title" textclassName= "textcard-text"  ></TextCard>*/}
         <HubNav ></HubNav>

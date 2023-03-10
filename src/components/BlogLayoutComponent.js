@@ -2,47 +2,34 @@ import React, { useEffect , useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function BlogLayoutCard(){
+
+function BlogLayoutCard({ablog}){
+  console.log("this is a",ablog)
+  const { blogTitle, BlogBody, createdAt, author, id, BlogImage, BlogTag} = ablog;
+  console.log(createdAt)
 
     return (
-
-    <Card  >
+      
+    <Card  className="blogpage-main">
       <div className="blogpage-single">
       <Card.Body>
-      <div className='blogcard-single'>
-          <Card.Img class="card-avatar" src='../aboutus.svg'/>
-          <div >
-          <Card.Text className='videocard-caption2'> author</Card.Text>
+      <div className='blogcard-single-header'>
+        <img className="card-avatar" src='../aboutus.svg'/>
+          <div className='blogcard-single-author'>
+          <Card.Text className='videocard-caption2'> {author}</Card.Text>
           <Card.Text className='videocard-caption2'> Date of Published</Card.Text>
           </div>
-      </div  >
+      </div >
 
       <div className='blogcard-image-single' >
-        <img  className='blogcard-image-single' src='../aboutus.svg' />
+        <img  className='blogcard-image-singleblog' src={BlogImage} />
       </div>
     <div className="blogcard-body-single">
      
-          <Card.Title className="">What is Zheé Gym Hub?</Card.Title>
+          <Card.Title className="blogcard-body-title">{blogTitle}</Card.Title>
           <div className='blogcard-body-single2'>
-          <Card.Text >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.
-          </Card.Text>
-          <Card.Link className='d-none textcard-btn hidden' href="#">Card Link</Card.Link>
+          <Card.Text className="blogcard-body-text">{BlogBody}</Card.Text>
+          <Card.Link className='d-none textcard-btn hidden' href="#"  >Card Link</Card.Link>
         </div>
     </div>
       </Card.Body>

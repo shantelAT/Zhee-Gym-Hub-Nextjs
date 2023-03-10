@@ -1,19 +1,23 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import React from "react";
 
-function ProductCard(props) {
-    const { ProdName} = props;
+function ProductCard({product}) {
+  console.log("products from card", product)
+  const { description, name, src, productImage} = product;
+
   return (
-    <Card className='productcard'>
-      <Card.Img  className='productcard-image' src="../aboutus.svg" />
+    <a className='productlink' href={src}>
+    <Card  className='productcard'>
+      <Card.Img  className='productcard-image' src={productImage} />
       <Card.Body className='productcard-body'>
-        <Card.Title >{ProdName}</Card.Title>
+        <Card.Title >{name}</Card.Title>
         <Card.Text>
-          Some quick example text to do what text do.
+          {description}
         </Card.Text>
-        <Button className='productcard-btn'>Go somewhere</Button>
       </Card.Body>
     </Card>
+    </a>
   );
 }
 

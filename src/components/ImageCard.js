@@ -3,11 +3,11 @@ import Card from 'react-bootstrap/Card';
 
 function ImageCard({cardBody, cardImage, src}) {
   return (
-    <Card.Body className= {cardBody}>
+    <div className= {cardBody}>
     <div  >
       <Card.Img className= {cardImage} src={src} />
     </div>
-    </Card.Body>
+    </div>
   );
 }
 

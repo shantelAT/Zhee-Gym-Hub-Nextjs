@@ -7,37 +7,57 @@ import ParagraphGridImageGrid from "../components/ParagraphImageGrid";
 import ContactForm from "@/components/SignInForm";
 import ContactUsForm from "@/components/ContactUsForm";
 import FooterGrid from "@/components/FooterGrid";
+import NavBarHome from "@/components/NavBar-Home";
 import Meta from "@/components/Meta";
 
 
-function getProducts() {
+import {useState, useEffect} from "react"
+import { firebaseApp, firestore } from "./util/firebase";
+import {getStorage } from "firebase/storage"
+import { collection, getDocs, getFirestore  } from "firebase/firestore";
 
-  return fetch("/api/products", {
-    method: "GET"
-  })
-    .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.error(error));
-}
+
+function getProducts() {
+    console.log("Hello")
+const [Blogs, setBlogs] = useState([]); 
+const db = getFirestore(firebaseApp);
+const storage = getStorage(firebaseApp );
+
+    useEffect(()=> {
+        ; (async () =>{
+            const collectionRef = collection(db, "product")
+            const  snapshots = await getDocs(collectionRef)
+            const docs = snapshots.docs.map(doc => {
+              const data = doc.data()
+              data.id = doc.id
+              return data
+            })
+            
+            setBlogs(docs)
+        })()
+      }, [])
+    }
 
 export default function Home() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [error, setError] = React.useState(false);
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = useState([]); 
+  const db = getFirestore(firebaseApp);
+  const storage = getStorage(firebaseApp )
 
-  React.useEffect(() => {
-    setIsLoading(true);
-    getProducts()
-      .then((response) => {
-        setProducts(response);
-        setIsLoading(false);
-        console.log(getProducts)
-      })
-      .catch((error) => {
-        console.error(error);
-        setError(true);
-      });
-  }, []);
+  useEffect(()=> {
+    ; (async () =>{
+        const collectionRef = collection(db, "product")
+        const  snapshots = await getDocs(collectionRef)
+        const docs = snapshots.docs.map(doc => {
+          const data = doc.data()
+          data.id = doc.id
+          return data
+        })
+        
+        setProducts(docs)
+    })()
+  }, [])
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error...</div>;
@@ -52,8 +72,11 @@ export default function Home() {
 
       </Head>
 
-      <main>
-        <NavBar showElement></NavBar>
+      <main className="index-main">
+      <div class="scroll-up-btn">
+         <i class="fas fa-angle-up"></i>
+      </div>
+        <NavBar-Home ></NavBar-Home>
         <Carousel></Carousel>
         <ParagraphGridImageGrid></ParagraphGridImageGrid>
         <ProductGrid products={products} />

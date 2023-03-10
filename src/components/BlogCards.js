@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 function BlogCard({blog}) {
 
 console.log("blog", blog)
-  const { blogTitle, BlogBody, createdAt, author,  BlogImage, BlogTag} = blog;
+  const { blogTitle, BlogBody, createdAt, author, id, BlogImage, BlogTag} = blog;
   
   
   return (
@@ -15,17 +15,16 @@ console.log("blog", blog)
       </div>
         
       <div className= 'blogcard-captions'>
-        <div className='blogcard'>
-          <Card.Img class="card-avatar" src='../aboutus.svg'/>
+        <div className='blogcard-caption1'>
+          <img className="card-avatar" src='../aboutus.svg'/>
           <div >
-          <Card.Text className='videocard-caption2'> {author}</Card.Text>
-          <Card.Text className='videocard-caption2'> </Card.Text>
+          <Card.Text className='blogcard-caption1' > {author}</Card.Text>
           </div>
         </div  >
 
-        <Card.Title className='videocard-caption1' > {blogTitle}</Card.Title>
-        <Card.Text className='videocard-caption2'> {BlogBody} ...</Card.Text> 
-        <Button href="/individualblogpage" className='productcard-btn'>Read More</Button>
+        <Card.Title className='blogcard-caption2' > {blogTitle}</Card.Title>
+        <Card.Text className='blogcard-caption3'> {BlogBody} ...</Card.Text> 
+        <Button  href={`/blogs/${id}`} className='productcard-btn'>Read More</Button>
            
           </div>
       </div>

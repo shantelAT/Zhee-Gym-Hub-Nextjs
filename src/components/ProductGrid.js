@@ -3,13 +3,15 @@ import Col from 'react-bootstrap/Col';
 import ProductCard from './Productcard';
 
 
-export default function GridAutoLayout({item, products}) {
+export default function GridAutoLayout({products}) {
+  console.log("products",products)
   return (
-    <div className='productgrid'>
+    <div className='productgrid-product'>
       <Row  >
-      {products?.map(({item}) => (
-      <Col key={{item}.id} >
-        <ProductCard product={{item}.name} />
+      {products?.map((item) => (
+    
+      <Col key={item.id} >
+        <ProductCard product={item} />
       </Col>
     ))}
       </Row>
