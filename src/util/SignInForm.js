@@ -29,21 +29,10 @@ function AuthForm(props) {
 
   const { handleSubmit, register, errors, getValues } = useForm();
 
-  // const handleSignIn = async () => {
-  //   try {
-  //     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-  //     const user = userCredential.user;
-  //     console.log("User authenticated:", user.uid);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const submitHandlersByType = {
     signin: ({ email, pass }) => {
       return signin(email, pass).then((user) => {
         // Call auth complete handler
-        connectStorageEmulator.log(props.onAuth(user));
         props.onAuth(user);
       });
     },
@@ -52,7 +41,28 @@ function AuthForm(props) {
         props.onAuth(user);
       });
     },
- 
+  //   forgotpass: ({ email }) => {
+  //       return "Forget Password Called"
+  //   //   return auth.sendPasswordResetEmail(email).then(() => {
+  //   //     setPending(false);
+  //   //     // Show success alert message
+  //   //     props.onFormAlert({
+  //   //       type: "success",
+  //   //       message: "Password reset email sent",
+  //   //     });
+  //   //   });
+  //   },
+  //   changepass: ({ pass }) => {
+  //       return "Password Changed"
+  //   //   return auth.confirmPasswordReset(pass).then(() => {
+  //   //     setPending(false);
+  //   //     // Show success alert message
+  //   //     props.onFormAlert({
+  //   //       type: "success",
+  //   //       message: "Your password has been changed",
+  //   //     });
+  //   //   });
+  //   },
   };
 
   // Handle form submission
@@ -61,6 +71,7 @@ function AuthForm(props) {
     // Show pending indicator
     setPending(true);
 
+    // Call submit handler for auth type
     submitHandlersByType[props.type]({
       email,
       pass,
@@ -77,28 +88,47 @@ function AuthForm(props) {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-         {["signup", "signin", "forgotpass"].includes(props.type) && (  
+      {["signup", "signin", "forgotpass"].includes(props.type) && (
+        
         <Form.Group controlId="formEmail">
-          <FormField  size="lg"name="email" type="email" placeholder="Email"
-          {...register('test', { required: true })} />
-        </Form.Group>   
-       )}
-        {["signup", "signin", "forgotpass"].includes(props.type) && (  
-        <Form.Group controlId="formPassword">
-          <FormField size="lg" name="pass"  type="password" placeholder="Password"
-           {...register('test', { required: true })} />
+          <FormField size="lg"name="email" type="email" placeholder="Email"/>
         </Form.Group>
+      )} 
+
       
-        )}
-      <Button variant="primary"  block={false}  size="lg"  type="submit" disabled={pending} > 
-       {!pending && <span>{props.buttonAction}</span>}
+       {["signup", "signin", "changepass"].includes(props.type) && (
+        <Form.Group controlId="formPassword">
+          <FormField size="lg" name="pass"  type="password" placeholder="Password"  onChange={(e) => setEmail(e.target.value)} />
+        </Form.Group>
+      )} 
+
+      
+        {/* <Form.Group controlId="formConfirmPass">
+          <FormField size="lg"  name="confirmPass"  type="password"  placeholder="Confirm Password"
+            error={"Issue Signing up"}
+            inputRef={register({
+              required: "Please enter your password again",
+              validate: (value) => {
+                if (value === getValues().pass) {
+                  return true;
+                } else {
+                  return "This doesn't match your password";
+                }
+              },
+            })}
+          />
+        </Form.Group> */}
+      
+
+      <Button variant="primary"  block={true}  size="lg"  type="submit" disabled={pending} > Sign In</Button>
+       {/* {!pending && <span>{props.buttonAction}</span>}
 
         {pending && (
           <Spinner animation="border" size="sm" role="status"  aria-hidden={true}  className="align-baseline">
             <span className="sr-only">Loading...</span>
           </Spinner>
         )} 
-      </Button>
+      </Button>*/}
     </Form>
   );
 }
@@ -188,9 +218,7 @@ export default AuthForm;
 //             type="email"
 //             placeholder="Email"
 //             // error={errors.email}
-//             // inputRef={register({
-//             //   required: "Please enter an email",
-//             // })}
+//             // inputRef={register({  required: "Please enter an email",})}
 //           />
 //         </Form.Group>
 //       )}

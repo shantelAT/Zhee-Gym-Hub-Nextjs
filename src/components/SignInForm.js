@@ -23,7 +23,7 @@ function SignInForm() {
         <Form.Control type="password" placeholder="Password" />
          
         <Form.Text className='contact-forgetpass'>
-           <a > forget your password? </a>
+           <p > forget your password? </p>
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">

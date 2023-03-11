@@ -3,12 +3,16 @@ import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 import Badge from "react-bootstrap/Badge";
 import { useAuth } from "@/util/auth";
+import { getAuth,onAuthStateChanged } from "firebase/auth";
 
 function AuthSocial(props) {
   const auth = useAuth();
   const [pending, setPending] = useState(null);
   const [lastUsed, setLastUsed] = useState(null);
-
+  const signinWithProvider = (name) => {
+    const provider = authProviders.find((p) => p.name === name).get();
+    return signInWithPopup(auth, provider).then(handleAuth);
+  };
   const providerDisplayNames = {
     google: "Google",
     facebook: "Facebook",
@@ -18,11 +22,9 @@ function AuthSocial(props) {
 
   const onSigninWithProvider = (provider) => {
     setPending(provider);
-    auth
-      .signinWithProvider(provider)
-      .then((user) => {
+    auth.signinWithProvider(provider).then((user) => {
         localStorage.setItem("lastUsedAuthProvider", provider);
-        props.onAuth(user);
+        props.onAuthStateChanged(user);
       })
       .catch((error) => {
         setPending(null);

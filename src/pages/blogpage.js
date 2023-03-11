@@ -41,7 +41,7 @@ return (
       </Head>
 
       <main>
-        <NavBar showElement></NavBar>
+        <NavBar ></NavBar>
         <HubNav ></HubNav>
         <BlogGrid  blogList={Blogs}></BlogGrid>
         <FooterGrid></FooterGrid>

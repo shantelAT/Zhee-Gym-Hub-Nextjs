@@ -32,7 +32,6 @@ const client = new QueryClient();
 // Subscribe to user data
 // Note: This is called automatically in `auth.js` and data is merged into `auth.user`
 export function useUser(uid) {
-  // Manage data fetching with React Query: https://react-query.tanstack.com/overview
   return useQuery(
     // Unique query key: https://react-query.tanstack.com/guides/query-keys
     ["user", { uid }],
@@ -117,7 +116,6 @@ export function deleteItem(id) {
 
 /**** HELPERS ****/
 
-// Store Firestore unsubscribe functions
 const unsubs = {};
 
 function createQuery(getRef) {
@@ -129,8 +127,6 @@ function createQuery(getRef) {
     const data = await new Promise((resolve, reject) => {
       unsubscribe = onSnapshot(
         getRef(),
-        // Success handler resolves the promise on the first run.
-        // For subsequent runs we manually update the React Query cache.
         (response) => {
           const data = format(response);
           if (firstRun) {
@@ -140,9 +136,7 @@ function createQuery(getRef) {
             client.setQueryData(queryKey, data);
           }
         },
-        // Error handler rejects the promise on the first run.
-        // We can't manually trigger an error in React Query, so on a subsequent runs we
-        // invalidate the query so that it re-fetches and rejects if error persists.
+     
         (error) => {
           if (firstRun) {
             firstRun = false;
@@ -154,8 +148,7 @@ function createQuery(getRef) {
       );
     });
 
-    // Unsubscribe from an existing subscription for this `queryKey` if one exists
-    // Then store `unsubscribe` function so it can be called later
+   
     const queryHash = hashQueryKey(queryKey);
     unsubs[queryHash] && unsubs[queryHash]();
     unsubs[queryHash] = unsubscribe;

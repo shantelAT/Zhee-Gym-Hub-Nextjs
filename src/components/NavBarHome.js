@@ -98,7 +98,7 @@ function NavBarHome({showElement}) {
               </Dropdown>
 
         <Nav.Item>
-        {showElement ? <Nav.Link style={{color:"white"}} href='/signinpage' className='nav-btn'>Sign in</Nav.Link> : <Card.Img className="card-avatar" src='../aboutus.svg'/>}
+        {showElement ? <Nav.Link style={{color:"white"}} href={`/auth/signin`} className='nav-btn'>Sign in</Nav.Link> : <Card.Img className="card-avatar" src='../aboutus.svg'/>}
         </Nav.Item>
 
         <Nav.Item>

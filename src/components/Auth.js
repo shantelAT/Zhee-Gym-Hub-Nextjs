@@ -34,17 +34,16 @@ function Auth(props) {
           {props.providers && props.providers.length && (
             <>
               <small className="text-center d-block my-3">OR</small>
-              <AuthSocial
-                buttonAction={props.buttonAction}
+              <AuthSocial buttonAction={props.buttonAction}
                 providers={props.providers}
                 showLastUsed={true}
                 onAuth={handleAuth}
-                onError={(message) => {
-                  handleFormAlert({
-                    type: "error",
-                    message: message,
-                  });
-                }}
+                // onError={(message) => {
+                //   handleFormAlert({
+                //     type: "error",
+                //     message: message,
+                //   });
+                // }}
               />
             </>
           )}
