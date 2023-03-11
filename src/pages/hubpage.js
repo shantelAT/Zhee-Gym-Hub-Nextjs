@@ -4,6 +4,9 @@ import NavBar from "../components/NavBar";
 import FooterGrid from "@/components/FooterGrid";
 import TextCard from "@/components/TextCard";
 import VideoGrid from "@/components/hub/VideoGrid";
+import Nav from 'react-bootstrap/Nav';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import HubNav from "@/components/hub/HubNav";
 import {ref, getDownloadURL, listAll } from "firebase/storage"
 import {useState, useEffect} from "react"
@@ -16,6 +19,9 @@ export default function ZheeHub() {
   const [videos, setVideos] = useState([]); 
   const storage = getStorage(firebaseApp );
   const tutotialListRef = ref(storage, "tutorial-videos")
+
+const [searchTerm, setSearchTerm] = useState("");
+
   const db = getFirestore(firebaseApp);
   
 
@@ -32,7 +38,26 @@ export default function ZheeHub() {
           
           setVideos(docs)
       })()
-    }, [])
+    }, [db])
+
+    const handleInputChange = (event) => {
+      console.log(event.target.value)
+      setSearchTerm(event.target.value);
+    };
+
+  const handleSearch = async (event) => {
+    try{
+      const filteredTutorials = videos.filter((selectedTutorial) =>
+      selectedTutorial.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setVideos(filteredTutorials)
+    console.log("updatedBlogs;", Blogs)
+     } catch (e) {
+      console.log(e);
+    };
+      
+    };
+
 
   return (
     <>
@@ -45,12 +70,16 @@ export default function ZheeHub() {
       </Head>
 
       <main>
-      <div class="scroll-up-btn">
-         <i class="fas fa-angle-up"></i>
+      <div className="scroll-up-btn">
+         <i className="fas fa-angle-up"></i>
       </div>
         <NavBar></NavBar>
-       { /*<TextCard cardclassName= "textcard-hub" titleclassName="textcard-title" textclassName= "textcard-text"  ></TextCard>*/}
-        <HubNav ></HubNav>
+       <Nav className="hubnav"  defaultActiveKey="/home">
+          <Form className="searchbar">
+            <Form.Control className="bar" type="search"placeholder="Search" onChange={handleInputChange} value={searchTerm}/>
+            <Button onClick={handleSearch}>Search</Button>
+          </Form> 
+        </Nav>
         <VideoGrid videosTutorials={videos} ></VideoGrid>  
         <FooterGrid></FooterGrid>
       </main>

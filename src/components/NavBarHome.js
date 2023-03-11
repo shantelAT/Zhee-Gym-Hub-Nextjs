@@ -106,8 +106,8 @@ function NavBarHome({showElement}) {
         </Nav.Item>
       </Nav>
 
-      <div class="menu-btn">
-                <i class="fas fa-bars"></i>
+      <div className="menu-btn">
+                <i className="fas fa-bars"></i>
             </div>
       </Navbar>
 

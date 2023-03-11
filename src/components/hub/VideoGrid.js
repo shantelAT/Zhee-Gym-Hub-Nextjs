@@ -12,7 +12,7 @@ export default function VideoGrid({videosTutorials}) {  //collect list of videos
     <div className='videogrid'>
       <Row>   
        {videosTutorials?.map((eachtutorial) => (
-        <Col key={{eachtutorial}.id} > 
+        <Col key={eachtutorial.id} > 
           <VideoCard tutorial={eachtutorial} /> 
         </Col>
         

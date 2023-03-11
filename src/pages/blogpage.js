@@ -3,8 +3,9 @@ import Head from "next/head";
 import NavBar from "../components/NavBar";
 import FooterGrid from "@/components/FooterGrid";
 import BlogGrid from "@/components/BlogGrid";
-
-import HubNav from "@/components/hub/HubNav";
+import Nav from 'react-bootstrap/Nav';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import {useState, useEffect} from "react"
 import { firebaseApp, firestore } from "../util/firebase";
 import {getStorage } from "firebase/storage"
@@ -15,20 +16,42 @@ export default function BlogHome() {
 const [Blogs, setBlogs] = useState([]); 
 const db = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp );
+const [searchTerm, setSearchTerm] = useState("");
 
-    useEffect(()=> {
-        ; (async () =>{
-            const collectionRef = collection(db, "blogs")
-            const  snapshots = await getDocs(collectionRef)
-            const docs = snapshots.docs.map(doc => {
-              const data = doc.data()
-              data.id = doc.id
-              return data
-            })
-            
-            setBlogs(docs)
-        })()
-      }, [])
+useEffect(()=> {
+  ; (async () =>{
+    const collectionRef = collection(db, "blogs")
+      const  snapshots = await getDocs(collectionRef);
+      const docs = snapshots.docs.map(doc => {
+        const data = doc.data()
+        data.id = doc.id
+        return data
+      })
+      
+      setBlogs(docs)
+  })()
+}, [db])
+
+      const handleInputChange = (event) => {
+        console.log(event.target.value)
+        setSearchTerm(event.target.value);
+      };
+
+    const handleSearch = async (event) => {
+      try{
+        const filteredBlogs = Blogs.filter((selectedBlog) =>
+        selectedBlog.blogTitle.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setBlogs(filteredBlogs)
+      console.log("updatedBlogs;", Blogs)
+       } catch (e) {
+        console.log(e);
+        alert("Blog not found")
+      };
+        
+      };
+
+     
 
 return (
     <>
@@ -42,7 +65,13 @@ return (
 
       <main>
         <NavBar showElement></NavBar>
-        <HubNav ></HubNav>
+
+        <Nav className="hubnav"  defaultActiveKey="/home">
+          <Form className="searchbar">
+            <Form.Control className="bar" type="search"placeholder="Search" onChange={handleInputChange} value={searchTerm}/>
+            <Button onClick={handleSearch}>Search</Button>
+          </Form> 
+        </Nav>
         <BlogGrid  blogList={Blogs}></BlogGrid>
         <FooterGrid></FooterGrid>
        

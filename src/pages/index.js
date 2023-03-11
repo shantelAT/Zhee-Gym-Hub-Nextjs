@@ -35,7 +35,9 @@ export default function Home() {
         
         setProducts(docs)
     })()
-  }, [])
+  }, [db])
+
+ 
 
 
   if (isLoading) return <div>Loading...</div>;
@@ -52,8 +54,8 @@ export default function Home() {
       </Head>
 
       <main className="index-main">
-       <div class="scroll-up-btn">
-         <i class="fas fa-angle-up"></i>
+       <div className="scroll-up-btn">
+         <i className="fas fa-angle-up"></i>
       </div> 
         <NavBarHome ></NavBarHome>
         <Carousel></Carousel>
