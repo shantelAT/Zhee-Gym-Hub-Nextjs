@@ -54,10 +54,10 @@ function useAuthProvider() {
   const [user, setUser] = useState(null);
 
   // Merge extra user data from the database  This means extra user data (such as payment plan) is available as par  of `auth.user` and doesn't need to be fetched separately. Convenient!
-  let finalUser = useMergeExtraData(user, { enabled: MERGE_DB_USER });
+ // let finalUser = useMergeExtraData(user, { enabled: MERGE_DB_USER });
 
   // Add custom fields and formatting to the `user` object
-  finalUser = useFormatUser(finalUser);
+  //finalUser = useFormatUser(finalUser);
 
   // Handle response from auth functions (`signup`, `signin`, and `signinWithProvider`)
   const handleAuth = async (response) => {
@@ -116,15 +116,15 @@ function useAuthProvider() {
   }, []);
 
   return {
-    user: finalUser,
+    user,
     signup,
     signin,
     signinWithProvider,
-    signout,
-    sendPasswordResetEmail,
-    confirmPasswordReset,
-    updatePassword,
-    updateProfile,
+     signout,
+    // sendPasswordResetEmail,
+    // confirmPasswordReset,
+    // updatePassword,
+    // updateProfile,
   };
 }
 
@@ -177,33 +177,11 @@ export const requireAuth = (Component) => {
 
 const authProviders = [
   {
-    id: "password",
-    name: "password",
-  },
-  {
     id: "google.com",
     name: "google",
     get: () => new GoogleAuthProvider(),
   },
-  {
-    id: "facebook.com",
-    name: "facebook",
-    get: () => {
-      const provider = new FacebookAuthProvider();
-      provider.setCustomParameters({ display: "popup" });
-      return provider;
-    },
-  },
-  {
-    id: "twitter.com",
-    name: "twitter",
-    get: () => new TwitterAuthProvider(),
-  },
-  {
-    id: "github.com",
-    name: "github",
-    get: () => new GithubAuthProvider(),
-  },
+  
 ];
 
 // Wait for Firebase user to be initialized before resolving promise

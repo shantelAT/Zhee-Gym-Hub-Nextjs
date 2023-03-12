@@ -22,12 +22,6 @@ function Auth(props) {
         <FormAlert type={formAlert.type} message={formAlert.message} />
       )}
 
-      <AuthForm
-        type={props.type}
-        buttonAction={props.buttonAction}
-        onAuth={handleAuth}
-        onFormAlert={handleFormAlert}
-      />
 
       {["signup", "signin"].includes(props.type) && (
         <>
@@ -38,12 +32,12 @@ function Auth(props) {
                 providers={props.providers}
                 showLastUsed={true}
                 onAuth={handleAuth}
-                // onError={(message) => {
-                //   handleFormAlert({
-                //     type: "error",
-                //     message: message,
-                //   });
-                // }}
+                onError={(message) => {
+                  handleFormAlert({
+                    type: "error",
+                    message: message,
+                  });
+                }}
               />
             </>
           )}

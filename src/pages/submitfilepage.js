@@ -3,17 +3,17 @@ import Meta from "@/components/Meta";
 import FileSubmissionForm from "@/components/FileSubmissionForm"
 import NavBar from "../components/NavBar";
 import FooterGrid from "@/components/FooterGrid";
+import { requireAuth } from "@/util/auth";
 
 function SignInPage(props) {
 
-  //<ImageCard cardBody={"videouploadcard"}  src={"../cloudupload.svg"}/>
   return (
     <main >
-       <NavBar showElement></NavBar>
+       <NavBar  ></NavBar>
       <FileSubmissionForm ></FileSubmissionForm>
       <FooterGrid></FooterGrid>
     </main>
   );
 }
 
-export default SignInPage;
+export default requireAuth(SignInPage);

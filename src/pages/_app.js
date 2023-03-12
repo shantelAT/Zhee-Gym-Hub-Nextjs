@@ -12,11 +12,15 @@ import { QueryClientProvider } from "../util/db";
 
 export default function App({ Component, pageProps }) {
   return (
+    <AuthProvider>
+
     <Component {...pageProps} />
+    </AuthProvider>
+
     /*
     <QueryClientProvider>
       <AuthProvider>
-        <>
+       
           <NavbarCustom
             bg="white"
             variant="light"

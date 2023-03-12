@@ -31,26 +31,6 @@ function NavBarHome({showElement}) {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [])
-
-  // useEffect(() => {
-  //   function handleScroll() {
-  //     if (window.scrollY > 20) {
-  //       document.querySelector('.navbar-home').classList.add('sticky');
-  //     } else {
-  //       document.querySelector('.navbar-home').classList.remove('sticky');
-  //     }
-
-  //     if (window.scrollY > 500) {
-  //       document.querySelector('.scroll-up-btn').classList.add('show');
-  //     } else {
-  //       document.querySelector('.scroll-up-btn').classList.remove('show');
-  //     }
-  //   }
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
   
 
   return (

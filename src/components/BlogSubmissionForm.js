@@ -6,6 +6,8 @@ import {uploadBlogFile} from "../util/handlingfirebas";
 import {createBlogDoc} from "../util/handlingfirebas";
 import {setBlogData} from "../util/handlingfirebas";
 import { TagsInput } from "react-tag-input-component"; 
+import { useRouter } from 'next/router';
+import SubmissionModal from "@/components/SubmissionModal"
  
 function HandlingBlogSubmissions() {
 
@@ -14,7 +16,7 @@ function HandlingBlogSubmissions() {
     const [blogBody, setBlogBody] = React.useState();
     const [blogImage, setBlogImage] = React.useState();
     const [blogTags, setBlogTag] = React.useState();
-
+    const router = useRouter();
 
   const handleBlogTitleChange = (event) => {
     setBlogTitle(event.target.value);
@@ -37,12 +39,11 @@ function HandlingBlogSubmissions() {
   }
 
   const bloghandleSubmit = async (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+  
     try {
       const BlogRef = createBlogDoc(); 
       const  uploadedBlogImageUrl = await uploadBlogFile(blogImage, `/blog-images/${BlogRef.id}`);
-   
+      
       const blogPost = {
         blogTitle: blogTitle,
         author: author,
@@ -50,12 +51,12 @@ function HandlingBlogSubmissions() {
         BlogBody: blogBody,
         BlogTag: blogTags.split(',')
       };
-
       setBlogData(BlogRef, blogPost);
-       
+      
     } catch (e) {
       console.log(e);   
     };
+    router.reload();
   }
 
   return (
@@ -98,6 +99,7 @@ function HandlingBlogSubmissions() {
         </Form.Group>
         </div>
     </Form> 
+    
     </main>
  
   );

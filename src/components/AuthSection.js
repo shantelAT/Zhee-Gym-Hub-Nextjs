@@ -31,19 +31,7 @@ function AuthSection(props) {
       signupPath: "/auth/signup",
       forgotPassAction: "Forgot Password?",
       forgotPassPath: "/auth/forgotpass",
-    },
-    forgotpass: {
-      title: "Get a new password",
-      buttonAction: "Reset password",
-      showFooter: true,
-      signinText: "Remember it after all?",
-      signinAction: "Sign in",
-      signinPath: "/auth/signin",
-    },
-    changepass: {
-      title: "Choose a new password",
-      buttonAction: "Change password",
-    },
+    }
   };
 
   // Ensure we have a valid auth type
@@ -79,8 +67,6 @@ function AuthSection(props) {
           afterAuthPath={props.afterAuthPath}
           key={type}
         />
-
-        {options.showFooter && <AuthFooter type={type} {...options} />}
       </Container>
     </Section>
   );

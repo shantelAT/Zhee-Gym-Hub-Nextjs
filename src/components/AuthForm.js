@@ -29,16 +29,6 @@ function AuthForm(props) {
 
   const { handleSubmit, register, errors, getValues } = useForm();
 
-  // const handleSignIn = async () => {
-  //   try {
-  //     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-  //     const user = userCredential.user;
-  //     console.log("User authenticated:", user.uid);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const submitHandlersByType = {
     signin: ({ email, pass }) => {
       return signin(email, pass).then((user) => {

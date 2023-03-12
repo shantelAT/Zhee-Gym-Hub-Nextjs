@@ -17,7 +17,7 @@ function AuthPage(props) {
         bgImage=""
         bgImageOpacity={1}
         type={router.query.type}
-        providers={["google", "facebook", "twitter"]}
+        providers={["google"]}
         afterAuthPath={router.query.next || "/#"}
       />
     </>
@@ -30,8 +30,6 @@ export const getStaticPaths = () => ({
   paths: [
     { params: { type: "signin" } },
     { params: { type: "signup" } },
-    { params: { type: "forgotpass" } },
-    { params: { type: "changepass" } },
   ],
   fallback: true,
 });
