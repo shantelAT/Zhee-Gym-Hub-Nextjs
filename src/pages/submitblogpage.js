@@ -17,5 +17,5 @@ function SignInPage(props) {
         </main>
       );
     }
-    
-    export default requireAuth(SignInPage);
+    export default SignInPage;
+    // export default requireAuth(SignInPage);
