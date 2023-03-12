@@ -9,6 +9,7 @@ function AuthSocial(props) {
   console.log(auth)
   const [pending, setPending] = useState(null);
   const [lastUsed, setLastUsed] = useState(null);
+  
   const signinWithProvider = (name) => {
     const provider = authProviders.find((p) => p.name === name).get();
     return signInWithPopup(auth, provider).then(handleAuth);

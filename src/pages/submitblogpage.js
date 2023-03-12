@@ -11,7 +11,7 @@ function SignInPage(props) {
     return (
         <main >
           
-           <NavBar showElement ></NavBar>
+           <NavBar ></NavBar>
           <BlogSubmissionForm></BlogSubmissionForm>
           <FooterGrid></FooterGrid>
         </main>

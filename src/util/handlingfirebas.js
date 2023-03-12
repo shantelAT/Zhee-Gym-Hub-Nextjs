@@ -36,7 +36,7 @@ export function createTutorialDoc() {
   export const uploadFile = async(videoFile, pathtofolder) => { 
     const storageRef = ref(storage, pathtofolder);
     const result = await uploadBytes(storageRef, videoFile);
-    alert("Tutorial Uploaded")
+    
     return getDownloadURL( result.ref)
    
   };
@@ -44,7 +44,6 @@ export function createTutorialDoc() {
   export const uploadBlogFile = async(blogImage, pathtofolder) => { 
     const storageRef = ref(storage, pathtofolder);
     const result = await uploadBytes(storageRef, blogImage);
-    alert("Tutorial Uploaded")
     return getDownloadURL( result.ref)
    
   };

@@ -16,7 +16,7 @@ function HandlingBlogSubmissions() {
     const [blogBody, setBlogBody] = React.useState();
     const [blogImage, setBlogImage] = React.useState();
     const [blogTags, setBlogTag] = React.useState();
-    const router = useRouter();
+    const [modalstate, setModalState] = React.useState(false);
 
   const handleBlogTitleChange = (event) => {
     setBlogTitle(event.target.value);
@@ -39,7 +39,8 @@ function HandlingBlogSubmissions() {
   }
 
   const bloghandleSubmit = async (e) => {
-  
+    e.preventDefault();
+    e.stopPropagation();
     try {
       const BlogRef = createBlogDoc(); 
       const  uploadedBlogImageUrl = await uploadBlogFile(blogImage, `/blog-images/${BlogRef.id}`);
@@ -51,20 +52,21 @@ function HandlingBlogSubmissions() {
         BlogBody: blogBody,
         BlogTag: blogTags.split(',')
       };
-      setBlogData(BlogRef, blogPost);
-      
+      await setBlogData(BlogRef, blogPost);
+      setModalState(true)
+
     } catch (e) {
       console.log(e);   
     };
-    router.reload();
   }
-
+  console.log(modalstate)
   return (
     <main className="videoForm">
 
     
       <Form className="form">
       <div className="blogForm-sec1">  
+      
         <Form.Label ><h1>Write Blog Post</h1></Form.Label>
         <Form.Group >
           <Form.Label >Blog title</Form.Label>
@@ -99,7 +101,7 @@ function HandlingBlogSubmissions() {
         </Form.Group>
         </div>
     </Form> 
-    
+    {modalstate && <SubmissionModal></SubmissionModal>} 
     </main>
  
   );

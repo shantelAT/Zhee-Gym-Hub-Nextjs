@@ -31,10 +31,7 @@ import { firebaseApp } from "./firebase";
 import { useUser, createUser, updateUser } from "./db";
 import router from "next/router";
 
-
-// Whether to merge extra user data from database into `auth.user`
 const MERGE_DB_USER = true;
-// Whether to send email verification on signup
 const EMAIL_VERIFICATION = true;
 
 // Initialize Firebase auth

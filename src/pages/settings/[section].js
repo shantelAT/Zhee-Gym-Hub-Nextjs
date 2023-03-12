@@ -1,8 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Meta from "@/components/Meta";
-import SettingsSection from "@/components/SettingsSection";
-import { requireAuth } from "@/pages/util/auth";
+import { requireAuth } from "@/util/auth";
 
 function SettingsPage(props) {
   const router = useRouter();
@@ -10,15 +9,7 @@ function SettingsPage(props) {
   return (
     <>
       <Meta title="Settings" />
-      <SettingsSection
-        bg="white"
-        textColor="dark"
-        size="md"
-        bgImage=""
-        bgImageOpacity={1}
-        section={router.query.section}
-        key={router.query.section}
-      />
+      
     </>
   );
 }

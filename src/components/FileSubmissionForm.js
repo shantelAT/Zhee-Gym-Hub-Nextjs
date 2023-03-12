@@ -4,7 +4,7 @@ import React from "react";
 import {uploadFile} from "../util/handlingfirebas";
 import {createTutorialDoc} from "../util/handlingfirebas";
 import {setTutorialData} from "../util/handlingfirebas";
-
+import SubmissionModal from "@/components/SubmissionModal"
  
 function HandlingTutorialSubmissions() {
 
@@ -14,6 +14,7 @@ function HandlingTutorialSubmissions() {
   const [videoTag, setVideoTag] = React.useState();
   const [author, setAuthor] = React.useState();
   const [title, setTitle] = React.useState();
+  const [modalstate, setModalState] = React.useState(false);
 
   const handleVideoFileSelect = (event) => {
     setVideoFile(event.target.files[0]);
@@ -56,9 +57,10 @@ function HandlingTutorialSubmissions() {
         thumbnailsUrl:  uploadedThumbnailUrl,
         videoTag: videoTag
       };
+      
+      await setTutorialData(tutorialRef, tutorial);
 
-      setTutorialData(tutorialRef, tutorial);
-      ("tutorial",tutorial)
+      setModalState(true)
      
       // when done, do stuff
     } catch (e) {
@@ -66,7 +68,7 @@ function HandlingTutorialSubmissions() {
       // when error, do stuff
     };
   }
-
+console.log(modalstate)
   return (
     <main className="videoForm">
     <Form className="form">
@@ -108,14 +110,13 @@ function HandlingTutorialSubmissions() {
             </Form.Label>
             </Form.Group>
           </div>
-        
-
         <Form.Group>
           <Button className='blogformbtn' onClick={handleSubmit} type="submit" > Submit</Button>
         </Form.Group>
       </div>
     </div>
-  </Form>  
+  </Form> 
+  {modalstate && <SubmissionModal></SubmissionModal>} 
 </main>  
 
   );
