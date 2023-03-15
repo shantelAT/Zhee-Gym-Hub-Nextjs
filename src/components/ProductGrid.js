@@ -6,6 +6,8 @@ import ProductCard from '@/components/ProductCard';
 export default function GridAutoLayout({products}) {
 
   return (
+    <main>
+         <h1 className='Services'> Services </h1>
     <div className='productgrid-product'>
       <Row  >
       {products?.map((item) => (
@@ -16,7 +18,9 @@ export default function GridAutoLayout({products}) {
     ))}
       </Row>
     </div>
-  );
+ 
+    </main>
+   ); 
 }
 
 

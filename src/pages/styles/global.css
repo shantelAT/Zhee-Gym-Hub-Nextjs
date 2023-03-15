@@ -926,3 +926,12 @@ margin-left: 10px;
 .scroll-up-btn:hover{
     filter: brightness(90%);
 }
+
+.Services{
+    color: var(--accent-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
