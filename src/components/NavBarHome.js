@@ -12,9 +12,9 @@ function NavBarHome({showElement}) {
     function handleScroll() {
       // sticky navbar on scroll script
       if (window.scrollY > 20) {
-        document.querySelector('.home').classList.add('sticky');
+        document.querySelector('.navbarhome').classList.add('sticky');
       } else {
-        document.querySelector('.home').classList.remove('sticky');
+        document.querySelector('.navbarhome').classList.remove('sticky');
       }
 
       // scroll-up button show/hide script
@@ -36,7 +36,7 @@ function NavBarHome({showElement}) {
   return (
     <>
   
-      <Navbar  sticky="top" className="home">
+      <Navbar  sticky="top" className="navbarhome">
         <Container>
           <Navbar.Brand href="#home">
             <img

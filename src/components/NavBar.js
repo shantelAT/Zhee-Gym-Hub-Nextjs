@@ -12,7 +12,7 @@ function NavBar({showElement}) {
   return (
     <>
   
-      <Navbar  sticky="top" className="navbar">
+      <Navbar  sticky="top" className="navbarother">
         <Container>
           <Navbar.Brand href="#home">
             <img
